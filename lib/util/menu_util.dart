@@ -12,6 +12,12 @@ class MenuUtil{
       case 0:
         routeName = RoutePage.home;
         break;
+      case 1:
+        routeName = RoutePage.stack;
+        break;
+      case 2:
+        routeName = RoutePage.project;
+        break;
       case 3:
         routeName = RoutePage.question;
         break;

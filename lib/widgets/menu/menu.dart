@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:juwon_portfolio/model/screen_model.dart';
 import 'package:juwon_portfolio/util/asset_path.dart';
 import 'package:juwon_portfolio/util/menu_util.dart';
 import 'package:juwon_portfolio/util/my_color.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/custom_menu_text_button.dart';
+import 'package:juwon_portfolio/widgets/menu/menu_tablet_and_mobile.dart';
 
 class Menu extends StatelessWidget {
   const Menu({
     required this.currentIndex,
+    required this.screenModel,
     super.key
   });
 
   final int currentIndex;
+  final ScreenModel screenModel;
 
   @override
   Widget build(BuildContext context) {
+    if(screenModel.tablet || screenModel.mobile){
+      return MenuTabletAndMobile(currentIndex: currentIndex, tablet: screenModel.tablet);
+    }
+    
     return Container(
       height: 80,
       width: double.infinity,

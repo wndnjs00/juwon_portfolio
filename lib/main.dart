@@ -1,11 +1,15 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:juwon_portfolio/home/home_screen.dart';
+import 'package:juwon_portfolio/project/project_screen.dart';
 import 'package:juwon_portfolio/question/question_screen.dart';
+import 'package:juwon_portfolio/stack/stack_screen.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(MyApp());
 }
 
@@ -24,6 +28,20 @@ class MyApp extends StatelessWidget {
                 key: ValueKey("home"),
                 title:"Home",
                 child: HomeScreen(),
+              );
+            },
+            RoutePage.stack: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("stack"),
+                title:"Stack",
+                child: StackScreen(),
+              );
+            },
+            RoutePage.project: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("project"),
+                title:"Project",
+                child: ProjectScreen(),
               );
             },
             RoutePage.question: (context, state, data){

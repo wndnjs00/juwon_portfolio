@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/widgets/menu/menu.dart';
 import 'package:juwon_portfolio/widgets/page_drawer.dart';
-import 'package:juwon_portfolio/widgets/screen_layout_builder.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+import '../widgets/screen_layout_builder.dart';
+
+class StackScreen extends StatefulWidget {
+  const StackScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<StackScreen> createState() => _StackScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _StackScreenState extends State<StackScreen> {
   @override
   Widget build(BuildContext context) {
     return ScreenLayoutBuilder(myBuilder: (screenModel, web, tablet, mobile){
       return Scaffold(
-        endDrawer: PageDrawer(currentIndex: 0, tablet: tablet),
+        endDrawer: PageDrawer(currentIndex: 1, tablet: tablet),
         body: Column(
           children: [
-            Menu(currentIndex: 0, screenModel: screenModel,),
+            Menu(currentIndex: 1, screenModel: screenModel)
           ],
         ),
       );
