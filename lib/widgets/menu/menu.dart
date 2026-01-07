@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/util/asset_path.dart';
 import 'package:juwon_portfolio/util/menu_util.dart';
 import 'package:juwon_portfolio/util/my_color.dart';
+import 'package:juwon_portfolio/util/text_util.dart';
+import 'package:juwon_portfolio/widgets/custom_menu_text_button.dart';
 
 class Menu extends StatelessWidget {
-  const Menu({super.key});
+  const Menu({
+    required this.currentIndex,
+    super.key
+  });
+
+  final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -40,15 +47,18 @@ class Menu extends StatelessWidget {
           const Spacer(),
 
           ...List.generate(MenuUtil.menuList.length, (index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
-              child: Text(
-                MenuUtil.menuList[index],
-                style: TextStyle(color: Colors.white),
-              ),
+            return CustomMenuTextButton(
+              text: MenuUtil.menuList[index],
+              textStyle: currentIndex == index
+                  ? TextUtil.get15(context, Colors.white)
+                  : TextUtil.get15(context, MyColor.gray10),
+              size: Size(90, 30),
+              onPressed: () {
+                MenuUtil.changeIndex(context, index);
+              },
             );
           }),
-          const SizedBox(width: 5),
+          const SizedBox(width: 13),
 
           Row(
             children: [

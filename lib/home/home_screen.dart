@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Menu(),
+          Menu(currentIndex: 0),
         ],
       ),
     );
