@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/util/asset_path.dart';
 import 'package:juwon_portfolio/util/menu_util.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
-import 'package:juwon_portfolio/widgets/bottom_circle_image.dart';
-import 'package:juwon_portfolio/widgets/custom_menu_text_button.dart';
+import 'package:juwon_portfolio/widgets/util/custom_menu_text_button.dart';
 
-import '../util/my_color.dart';
+import '../../util/my_color.dart';
+import '../util/bottom_circle_image.dart';
 
 class PageDrawer extends StatelessWidget {
   const PageDrawer({
@@ -63,7 +63,7 @@ class PageDrawer extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Container(
               height: 2,
-              color: Colors.white.withOpacity(0.3),
+              color: Colors.white.withValues(alpha: 0.3),
             ),
           ),
           const SizedBox(height: 30),

@@ -41,10 +41,10 @@ class CustomMenuTextButton extends StatelessWidget {
         // hover / pressed 배경 밝기 조절
         overlayColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.pressed)) {
-            return Colors.white.withOpacity(0.22); // 클릭 시 가장 밝게
+            return Colors.white.withValues(alpha: 0.22); // 클릭 시 가장 밝게
           }
           if (states.contains(WidgetState.hovered)) {
-            return Colors.white.withOpacity(0.22); // hover 시 밝게
+            return Colors.white.withValues(alpha: 0.22); // hover 시 밝게
           }
           return Colors.transparent;
         }),

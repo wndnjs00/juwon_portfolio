@@ -17,8 +17,8 @@ class BottomCircleImage extends StatelessWidget {
       child: ClipOval(
         child: Image.asset(
           imagePath,
-          width: 28,
-          height: 28,
+          width: 30,
+          height: 30,
           fit: BoxFit.cover,
         ),
       ),
