@@ -14,6 +14,9 @@ class MyColor {
   static const backgroundDark = Color(0xFF0F1014);
   static const surfaceDark = Color(0xFF1A1B1F);
 
+  // Background
+  static const contentBackground = Color(0xFFF7F9FA);
+
   // Tag / Skill Badge
   static const tagYellow = Color(0xFFFFF3B0); // 연한 옐로우
   static const tagOrange = Color(0xFFFFE0B2); // 소프트 오렌지
