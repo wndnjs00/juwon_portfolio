@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/widgets/menu/menu.dart';
 import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
-import 'package:juwon_portfolio/widgets/screen_layout_builder.dart';
+import 'package:juwon_portfolio/widgets/util/screen_layout_builder.dart';
 
 class ProjectScreen extends StatefulWidget {
   const ProjectScreen({super.key});

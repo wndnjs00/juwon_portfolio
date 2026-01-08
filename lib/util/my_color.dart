@@ -9,6 +9,7 @@ class MyColor {
   static const gray10 = Color(0xFFB4B7C2);
   static const gray20 = Color(0xFF8B8E9C);
   static const gray30 = Color(0xFF5C5F6B);
+  static const gray40 = Color(0xFF535560);
   static const gray80 = Color(0xFF2A2C33);
   static const gray90 = Color(0xFF1F2026);
   static const backgroundDark = Color(0xFF0F1014);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/widgets/menu/menu.dart';
 import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
 
-import '../widgets/screen_layout_builder.dart';
+import '../widgets/util/screen_layout_builder.dart';
 
 class StackScreen extends StatefulWidget {
   const StackScreen({super.key});

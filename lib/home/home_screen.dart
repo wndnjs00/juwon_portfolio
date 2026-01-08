@@ -4,7 +4,7 @@ import 'package:juwon_portfolio/widgets/footer/footer.dart';
 import 'package:juwon_portfolio/widgets/header/header.dart';
 import 'package:juwon_portfolio/widgets/menu/menu.dart';
 import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
-import 'package:juwon_portfolio/widgets/screen_layout_builder.dart';
+import 'package:juwon_portfolio/widgets/util/screen_layout_builder.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

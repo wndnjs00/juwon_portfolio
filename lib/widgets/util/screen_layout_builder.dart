@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../model/screen_model.dart';
+import '../../model/screen_model.dart';
 
 typedef MyBuilder =
     Widget Function(
