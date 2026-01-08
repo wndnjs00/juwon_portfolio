@@ -5,12 +5,17 @@ import 'package:juwon_portfolio/util/my_color.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/util/custom_text_button.dart';
 
+import '../menu/menu_height.dart';
+
 class Header extends StatelessWidget {
   const Header({
     required this.title,
     this.developerTitle = "",
     required this.subTitle,
     required this.screenModel,
+    this.showProfileImage = true,
+    this.showActionButtons= true,
+    this.topSpacing = 15,
     super.key,
   });
 
@@ -18,6 +23,9 @@ class Header extends StatelessWidget {
   final String developerTitle;
   final String subTitle;
   final ScreenModel screenModel;
+  final bool showProfileImage;
+  final bool showActionButtons;
+  final double topSpacing;
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +36,21 @@ class Header extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 15),
-          GestureDetector(
-            onTap: () {},
-            child: ClipOval(
-              child: Image.asset(
-                AssetPath.officeImage,
-                width: 100,
-                height: 100,
-                fit: BoxFit.cover,
+          SizedBox(height: topSpacing),
+
+          if(showProfileImage) ...[
+            GestureDetector(
+              onTap: () {},
+              child: ClipOval(
+                child: Image.asset(
+                  AssetPath.officeImage,
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
+          ],
 
           SizedBox(height: 5),
           Text(
@@ -65,59 +76,61 @@ class Header extends StatelessWidget {
               Colors.white,
             ).copyWith(fontWeight: FontWeight.w300, fontSize: subTitleFontSize()),
           ),
-          SizedBox(height: 45),
 
-          if(screenModel.web) ...[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomTextButton(
-                  text: "프로젝트 보기",
-                  textStyle: TextUtil.get16(context, Colors.white),
-                  size: Size(140, 44),
-                  backgroundColor: MyColor.primaryBlue,
-                  onPressed: () {},
-                ),
-                SizedBox(width: 12),
-                CustomTextButton(
-                  text: "연락하기",
-                  textStyle: TextUtil.get16(context, Colors.white),
-                  size: Size(140, 44),
-                  backgroundColor: MyColor.gray80,
-                  border: BorderSide(
-                      color: Colors.white.withValues(alpha: 0.15),
-                      width: 1
+          if (showActionButtons) ...[
+            SizedBox(height: 45),
+            if(screenModel.web) ...[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomTextButton(
+                    text: "프로젝트 보기",
+                    textStyle: TextUtil.get16(context, Colors.white),
+                    size: Size(140, 44),
+                    backgroundColor: MyColor.primaryBlue,
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
-                ),
-              ],
-            )
-          ]else...[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CustomTextButton(
-                  text: "프로젝트 보기",
-                  textStyle: TextUtil.get16(context, Colors.white),
-                  size: Size(140, 44),
-                  backgroundColor: MyColor.primaryBlue,
-                  onPressed: () {},
-                ),
-                SizedBox(height: 12),
-                CustomTextButton(
-                  text: "연락하기",
-                  textStyle: TextUtil.get16(context, Colors.white),
-                  size: Size(140, 44),
-                  backgroundColor: MyColor.gray80,
-                  border: BorderSide(
-                      color: Colors.white.withValues(alpha: 0.15),
-                      width: 1
+                  SizedBox(width: 12),
+                  CustomTextButton(
+                    text: "연락하기",
+                    textStyle: TextUtil.get16(context, Colors.white),
+                    size: Size(140, 44),
+                    backgroundColor: MyColor.gray80,
+                    border: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.15),
+                        width: 1
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
-                ),
-              ],
-            )
-          ],
+                ],
+              )
+            ]else...[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CustomTextButton(
+                    text: "프로젝트 보기",
+                    textStyle: TextUtil.get16(context, Colors.white),
+                    size: Size(140, 44),
+                    backgroundColor: MyColor.primaryBlue,
+                    onPressed: () {},
+                  ),
+                  SizedBox(height: 12),
+                  CustomTextButton(
+                    text: "연락하기",
+                    textStyle: TextUtil.get16(context, Colors.white),
+                    size: Size(140, 44),
+                    backgroundColor: MyColor.gray80,
+                    border: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.15),
+                        width: 1
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              )
+            ],
+          ]
         ],
       ),
     );

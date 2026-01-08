@@ -4,6 +4,7 @@ import 'package:juwon_portfolio/util/asset_path.dart';
 import 'package:juwon_portfolio/util/menu_util.dart';
 import 'package:juwon_portfolio/util/my_color.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
+import 'package:juwon_portfolio/widgets/menu/menu_height.dart';
 import 'package:juwon_portfolio/widgets/util/custom_menu_text_button.dart';
 import 'package:juwon_portfolio/widgets/menu/menu_tablet_and_mobile.dart';
 
@@ -24,7 +25,7 @@ class Menu extends StatelessWidget {
     }
     
     return Container(
-      height: 80,
+      height: MenuHeight.height,
       width: double.infinity,
       color: Colors.black,
       child: Row(
