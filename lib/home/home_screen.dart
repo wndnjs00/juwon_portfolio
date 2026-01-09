@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/util/screen_padding.dart';
+import 'package:juwon_portfolio/widgets/home/custom_home_main_title.dart';
 import 'package:juwon_portfolio/widgets/util/common_scaffold.dart';
 import 'package:juwon_portfolio/widgets/footer/footer.dart';
 import 'package:juwon_portfolio/widgets/header/header.dart';
 import 'package:juwon_portfolio/widgets/menu/menu.dart';
 import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
 import 'package:juwon_portfolio/widgets/util/screen_layout_builder.dart';
+
+import '../util/asset_path.dart';
+import '../widgets/home/custom_skill_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,7 +36,89 @@ class _HomeScreenState extends State<HomeScreen> {
               developerTitle: "Android Developer",
               screenModel: screenModel
           ),
-          contents: Column(),
+
+        contents: Column(
+          children: [
+            SizedBox(height: 50),
+            CustomHomeMainTitle(
+              title: "Technical Skills",
+              subTitle: "프로젝트에서 활용한 주요 기술스택입니다.",
+              showActionButton: false,
+            ),
+
+            const SizedBox(height: 40),
+
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20,
+              runSpacing: 20,
+              children: [
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Kotlin"
+                ),
+                const SizedBox(width: 60),
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Java"
+                ),
+                const SizedBox(width: 60),
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Flutter"
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20,
+              runSpacing: 20,
+              children: [
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Dart"
+                ),
+                const SizedBox(width: 60),
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Android"
+                ),
+                const SizedBox(width: 60),
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Spring Boot"
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20,
+              runSpacing: 20,
+              children: [
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "Firebase"
+                ),
+                const SizedBox(width: 60),
+                CustomSkillCardWidget(
+                    imagePath: AssetPath.officeImage,
+                    skillTitle: "MySQL"
+                ),
+                const SizedBox(width: 60),
+                CustomSkillCardWidget(
+                  imagePath: null,
+                  skillTitle: "",
+                  color: Colors.transparent,
+                  borderColor: Colors.transparent,
+                ),
+              ],
+            ),
+          ],
+        ),
+
           footer: const Footer(
               title: "이승현",
               subTitle: "Android Developer"

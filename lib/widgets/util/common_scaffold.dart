@@ -4,6 +4,7 @@ import 'package:juwon_portfolio/widgets/footer/footer.dart';
 import 'package:juwon_portfolio/widgets/menu/menu.dart';
 import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
 
+import '../../util/my_color.dart';
 import '../menu/menu_height.dart';
 
 class CommonScaffold extends StatelessWidget {
@@ -14,6 +15,7 @@ class CommonScaffold extends StatelessWidget {
     required this.contents,
     required this.footer,
     this.horizontalPadding = 0,
+    this.backgroundColor = MyColor.contentBackground,
     super.key
   });
 
@@ -23,10 +25,12 @@ class CommonScaffold extends StatelessWidget {
   final Widget header;
   final Widget contents;
   final Widget footer;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       endDrawer: PageDrawer(
           currentIndex: currentIndex,
           tablet: screenModel.tablet,
