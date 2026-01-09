@@ -23,10 +23,18 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int selectedIndex = 0;
+  late VoidCallback listener = (){
+    setState(() {});
+  };
 
   @override
   void initState() {
-    QuestionUtil().initData();
+    QuestionUtil()
+      ..initData()
+      ..emailController.addListener(listener)
+      ..nameController.addListener(listener)
+      ..titleController.addListener(listener)
+      ..contentController.addListener(listener);
     super.initState();
   }
 

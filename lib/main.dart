@@ -67,6 +67,20 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple.shade600),
         useMaterial3: true,
         textTheme: TextUtil.setTextTheme(),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: WidgetStateProperty.resolveWith<Color?>((states) {
+              if(states.contains(WidgetState.disabled)) return Colors.grey;
+              return null;
+            }),
+            backgroundColor: WidgetStateProperty.resolveWith<Color?>((states){
+              if(states.contains(WidgetState.disabled)) {
+                return Colors.grey;
+              }
+              return null;
+            })
+          )
+        ),
         fontFamily: "pretendard"
       ),
       routerDelegate: routerDelegate,
