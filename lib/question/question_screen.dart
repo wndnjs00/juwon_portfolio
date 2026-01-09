@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:juwon_portfolio/question/widgets/question_tablet_and_mobile.dart';
 import 'package:juwon_portfolio/question/widgets/question_web.dart';
 import 'package:juwon_portfolio/question/widgets/question_widgets.dart';
 import 'package:juwon_portfolio/util/question_util.dart';
@@ -66,7 +67,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           contents: Column(
             children: [
               QuestionSubtitle(screenModel: screenModel),
-              QuestionWeb(),
+              if (web) ...[QuestionWeb()] else ...[QuestionTabletAndMobile()],
             ],
           ),
           footer: const Footer(

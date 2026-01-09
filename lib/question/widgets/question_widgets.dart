@@ -67,7 +67,7 @@ class QuestionWidgets {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         QuestionWidgets.contentTitle(context, web, "문의 내용 *"),
-        const SizedBox(height: 25),
+        const SizedBox(height: 4),
         CustomTextFormField(
           controller: controller,
           textInputType: TextInputType.multiline,

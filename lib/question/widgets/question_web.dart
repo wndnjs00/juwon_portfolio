@@ -78,7 +78,7 @@ class _QuestionWebState extends State<QuestionWeb> {
 
         const SizedBox(height: 25),
         QuestionWidgets.contentBox(context, true, qUtil.contentController),
-        const SizedBox(height: 25),
+        const SizedBox(height: 40),
         CustomTextButton(
           text: "문의하기",
           textStyle: TextUtil.get16(context, Colors.white),
