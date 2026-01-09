@@ -69,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-
             const SizedBox(height: 20),
             Wrap(
               alignment: WrapAlignment.center,
@@ -113,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   skillTitle: "",
                   color: Colors.transparent,
                   borderColor: Colors.transparent,
+                  enableHover: false,
                 ),
               ],
             ),
