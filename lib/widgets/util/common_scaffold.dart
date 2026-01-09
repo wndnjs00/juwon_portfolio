@@ -10,38 +10,51 @@ class CommonScaffold extends StatelessWidget {
   const CommonScaffold({
     required this.currentIndex,
     required this.screenModel,
-    required this.children,
+    required this.header,
+    required this.contents,
+    required this.footer,
+    this.horizontalPadding = 0,
     super.key
   });
 
   final int currentIndex;
   final ScreenModel screenModel;
-  final List<Widget> children;
+  final double horizontalPadding;
+  final Widget header;
+  final Widget contents;
+  final Widget footer;
 
   @override
   Widget build(BuildContext context) {
-    children.add(Footer(title: "이승현", subTitle: "Android Developer"));
     return Scaffold(
       endDrawer: PageDrawer(
           currentIndex: currentIndex,
           tablet: screenModel.tablet,
       ),
-      body:Stack(
+      body: Column(
         children: [
-          Positioned.fill(
+          Menu(
+              currentIndex: currentIndex,
+              screenModel: screenModel
+          ),
+
+          Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.only(top: MenuHeight.height),
                 child: Column(
-                  children: children,
+                  children: [
+                    header,
+
+                    // body에만 패딩적용
+                    Padding(
+                        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                      child: contents
+                    ),
+
+                    footer,
+                  ],
                 ),
               ),
           ),
-          Positioned(
-              left: 0,
-              top: 0,
-              right: 0,
-              child: Menu(currentIndex: currentIndex, screenModel: screenModel)
-          )
         ],
       ),
     );

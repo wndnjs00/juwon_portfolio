@@ -7,11 +7,7 @@ import '../../util/my_color.dart';
 import '../util/custom_menu_text_button.dart';
 
 class Footer extends StatelessWidget {
-  const Footer({
-    required this.title,
-    required this.subTitle,
-    super.key
-  });
+  const Footer({required this.title, required this.subTitle, super.key});
 
   final String title;
   final String subTitle;
@@ -33,8 +29,10 @@ class Footer extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextUtil.get14(context, Colors.white)
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: TextUtil.get14(
+                      context,
+                      Colors.white,
+                    ).copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 6),
                   Text(
@@ -47,20 +45,17 @@ class Footer extends StatelessWidget {
                     children: [
                       BottomCircleImage(
                         imagePath: AssetPath.officeImage,
-                        onTap: () {
-                        },
+                        onTap: () {},
                       ),
                       const SizedBox(width: 6),
                       BottomCircleImage(
                         imagePath: AssetPath.officeImage,
-                        onTap: () {
-                        },
+                        onTap: () {},
                       ),
                       const SizedBox(width: 6),
                       BottomCircleImage(
                         imagePath: AssetPath.officeImage,
-                        onTap: () {
-                        },
+                        onTap: () {},
                       ),
                     ],
                   ),
@@ -74,8 +69,10 @@ class Footer extends StatelessWidget {
                 children: [
                   Text(
                     "카테고리",
-                    style: TextUtil.get14(context, Colors.white)
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: TextUtil.get14(
+                      context,
+                      Colors.white,
+                    ).copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 5),
                   ...List.generate(MenuUtil.menuList.length, (index) {
@@ -99,8 +96,10 @@ class Footer extends StatelessWidget {
                 children: [
                   Text(
                     "프로젝트",
-                    style: TextUtil.get14(context, Colors.white)
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: TextUtil.get14(
+                      context,
+                      Colors.white,
+                    ).copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 5),
                   ...List.generate(MenuUtil.projectList.length, (index) {
@@ -133,8 +132,10 @@ class Footer extends StatelessWidget {
               children: [
                 Text(
                   "© 2026 이승현. All rights reserved.",
-                  style: TextUtil.get14(context, MyColor.gray10)
-                      .copyWith(fontWeight: FontWeight.bold),
+                  style: TextUtil.get14(
+                    context,
+                    MyColor.gray10,
+                  ).copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 4),
                 Text(

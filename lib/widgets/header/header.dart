@@ -14,7 +14,7 @@ class Header extends StatelessWidget {
     required this.subTitle,
     required this.screenModel,
     this.showProfileImage = true,
-    this.showActionButtons= true,
+    this.showActionButtons = true,
     this.topSpacing = 15,
     super.key,
   });
@@ -29,6 +29,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       width: double.infinity,
       height: 430,
@@ -38,7 +39,7 @@ class Header extends StatelessWidget {
         children: [
           SizedBox(height: topSpacing),
 
-          if(showProfileImage) ...[
+          if (showProfileImage) ...[
             GestureDetector(
               onTap: () {},
               child: ClipOval(
@@ -71,15 +72,15 @@ class Header extends StatelessWidget {
           Text(
             subTitle,
             textAlign: TextAlign.center,
-            style: TextUtil.get15(
-              context,
-              Colors.white,
-            ).copyWith(fontWeight: FontWeight.w300, fontSize: subTitleFontSize()),
+            style: TextUtil.get15(context, Colors.white).copyWith(
+              fontWeight: FontWeight.w300,
+              fontSize: subTitleFontSize(),
+            ),
           ),
 
           if (showActionButtons) ...[
             SizedBox(height: 45),
-            if(screenModel.web) ...[
+            if (screenModel.web) ...[
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -97,14 +98,14 @@ class Header extends StatelessWidget {
                     size: Size(140, 44),
                     backgroundColor: MyColor.gray80,
                     border: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.15),
-                        width: 1
+                      color: Colors.white.withValues(alpha: 0.15),
+                      width: 1,
                     ),
                     onPressed: () {},
                   ),
                 ],
-              )
-            ]else...[
+              ),
+            ] else ...[
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -122,24 +123,23 @@ class Header extends StatelessWidget {
                     size: Size(140, 44),
                     backgroundColor: MyColor.gray80,
                     border: BorderSide(
-                        color: Colors.white.withValues(alpha: 0.15),
-                        width: 1
+                      color: Colors.white.withValues(alpha: 0.15),
+                      width: 1,
                     ),
                     onPressed: () {},
                   ),
                 ],
-              )
+              ),
             ],
-          ]
+          ],
         ],
       ),
     );
   }
 
-
-  double subTitleFontSize(){
-    if(screenModel.web) return 18;
-    if(screenModel.tablet) return 14;
+  double subTitleFontSize() {
+    if (screenModel.web) return 18;
+    if (screenModel.tablet) return 14;
     return 13;
   }
 }
