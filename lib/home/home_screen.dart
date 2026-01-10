@@ -48,74 +48,148 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 40),
 
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 20,
-              runSpacing: 20,
-              children: [
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Kotlin"
-                ),
-                const SizedBox(width: 60),
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Java"
-                ),
-                const SizedBox(width: 60),
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Flutter"
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 20,
-              runSpacing: 20,
-              children: [
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Dart"
-                ),
-                const SizedBox(width: 60),
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Android"
-                ),
-                const SizedBox(width: 60),
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Spring Boot"
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 20,
-              runSpacing: 20,
-              children: [
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "Firebase"
-                ),
-                const SizedBox(width: 60),
-                CustomSkillCardWidget(
-                    imagePath: AssetPath.officeImage,
-                    skillTitle: "MySQL"
-                ),
-                const SizedBox(width: 60),
-                CustomSkillCardWidget(
-                  imagePath: null,
-                  skillTitle: "",
-                  color: Colors.transparent,
-                  borderColor: Colors.transparent,
-                  enableHover: false,
-                ),
-              ],
-            ),
+            if (web) ...[
+              // Skill Card
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Kotlin"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Java"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Flutter"
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Dart"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Android"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Spring Boot"
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Firebase"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "MySQL"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                    imagePath: null,
+                    skillTitle: "",
+                    color: Colors.transparent,
+                    borderColor: Colors.transparent,
+                    enableHover: false,
+                  ),
+                ],
+              ),
+            ]else...[
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Kotlin"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Java"
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Flutter"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Dart"
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Android"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "Spring Boot"
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "MySQL"
+                  ),
+                  const SizedBox(width: 60),
+                  CustomSkillCardWidget(
+                    imagePath: null,
+                    skillTitle: "",
+                    color: Colors.transparent,
+                    borderColor: Colors.transparent,
+                    enableHover: false,
+                  ),
+                ],
+              ),
+            ],
           ],
         ),
 
