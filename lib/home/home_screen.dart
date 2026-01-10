@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/util/screen_padding.dart';
 import 'package:juwon_portfolio/widgets/home/custom_home_main_title.dart';
+import 'package:juwon_portfolio/widgets/home/custom_stack_chip.dart';
+import 'package:juwon_portfolio/widgets/home/project_card_widget.dart';
 import 'package:juwon_portfolio/widgets/util/common_scaffold.dart';
 import 'package:juwon_portfolio/widgets/footer/footer.dart';
 import 'package:juwon_portfolio/widgets/header/header.dart';
@@ -9,6 +11,7 @@ import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
 import 'package:juwon_portfolio/widgets/util/screen_layout_builder.dart';
 
 import '../util/asset_path.dart';
+import '../util/my_color.dart';
 import '../widgets/home/custom_skill_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -52,8 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
               // Skill Card
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 60,
-                runSpacing: 20,
+                spacing: 80,
+                runSpacing: 10,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
@@ -72,8 +75,8 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 60,
-                runSpacing: 20,
+                spacing: 80,
+                runSpacing: 10,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
@@ -92,8 +95,8 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 60,
-                runSpacing: 20,
+                spacing: 80,
+                runSpacing: 10,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
@@ -168,18 +171,74 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
-                      skillTitle: "MySQL"
+                      skillTitle: "Firebase"
                   ),
                   CustomSkillCardWidget(
-                    imagePath: null,
-                    skillTitle: "",
-                    color: Colors.transparent,
-                    borderColor: Colors.transparent,
-                    enableHover: false,
+                      imagePath: AssetPath.officeImage,
+                      skillTitle: "MySQL"
                   ),
                 ],
               ),
             ],
+
+            const SizedBox(height: 100),
+            CustomHomeMainTitle(
+              title: "Featured Projects",
+              subTitle: "주요 프로젝트를 소개합니다",
+              showActionButton: true,
+            ),
+            const SizedBox(height: 40),
+
+            // 프로젝트
+            ProjectCardWidget(
+                title: "프로젝트 이름1",
+                description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+                imagePath: AssetPath.officeImage,
+                customStackChip: const [
+                  CustomStackChip(
+                      text: "TypeScript",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                      text: "React",
+                      backgroundColor: MyColor.tagPurple,
+                      textColor: Colors.black,
+                  ),
+                ],
+                androidUrl: "",
+                githubUrl: ""
+            ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
+                title: "프로젝트 이름1",
+                description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+                imagePath: AssetPath.officeImage,
+                customStackChip: const [
+                  CustomStackChip(
+                      text: "TypeScript",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                      text: "React",
+                      backgroundColor: MyColor.tagPurple,
+                      textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                      text: "React",
+                      backgroundColor: MyColor.tagPurple,
+                      textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "React",
+                    backgroundColor: MyColor.tagPurple,
+                    textColor: Colors.black,
+                  ),
+                ],
+                androidUrl: "",
+                githubUrl: ""
+            ),
           ],
         ),
 
