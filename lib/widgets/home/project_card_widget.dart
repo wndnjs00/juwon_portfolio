@@ -3,6 +3,7 @@ import 'package:juwon_portfolio/util/asset_path.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/home/custom_android_github_btn.dart';
 import 'package:juwon_portfolio/widgets/home/custom_stack_chip.dart';
+import 'package:juwon_portfolio/widgets/home/project_card_mobile_and_tablet_widget.dart';
 
 class ProjectCardWidget extends StatelessWidget {
   const ProjectCardWidget({
@@ -12,6 +13,7 @@ class ProjectCardWidget extends StatelessWidget {
     required this.customStackChip,
     required this.androidUrl,
     required this.githubUrl,
+    required this.isWeb,
     super.key,
   });
 
@@ -21,18 +23,20 @@ class ProjectCardWidget extends StatelessWidget {
   final List<CustomStackChip> customStackChip;
   final String androidUrl;
   final String githubUrl;
+  final bool isWeb;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 750,
+      width: isWeb ? 750 : double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.grey.shade200),
       ),
-      child: Row(
+      child: isWeb
+        ? Row(
         children: [
           Expanded(
             child: Column(
@@ -77,9 +81,7 @@ class ProjectCardWidget extends StatelessWidget {
               ],
             ),
           ),
-
           const SizedBox(width: 24),
-
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
@@ -90,7 +92,15 @@ class ProjectCardWidget extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      )
+          : ProjectCardMobileAndTabletWidget(
+          title: title,
+          description: description,
+          customStackChip: customStackChip,
+          androidUrl: androidUrl,
+          githubUrl: githubUrl,
+          imagePath: imagePath
+      )
     );
   }
 }

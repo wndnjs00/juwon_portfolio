@@ -207,11 +207,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
                 androidUrl: "",
-                githubUrl: ""
+                githubUrl: "",
+                isWeb: web,
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
-                title: "프로젝트 이름1",
+                title: "프로젝트 이름2",
                 description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
                 imagePath: AssetPath.officeImage,
                 customStackChip: const [
@@ -237,8 +238,52 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
                 androidUrl: "",
-                githubUrl: ""
+                githubUrl: "",
+                isWeb: web,
             ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
+              title: "프로젝트 이름3",
+              description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+              imagePath: AssetPath.officeImage,
+              customStackChip: const [
+                CustomStackChip(
+                  text: "TypeScript",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "React",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+              ],
+              androidUrl: "",
+              githubUrl: "",
+              isWeb: web,
+            ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
+              title: "프로젝트 이름4",
+              description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+              imagePath: AssetPath.officeImage,
+              customStackChip: const [
+                CustomStackChip(
+                  text: "TypeScript",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "React",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+              ],
+              androidUrl: "",
+              githubUrl: "",
+              isWeb: web,
+            ),
+            const SizedBox(height: 60),
           ],
         ),
 
