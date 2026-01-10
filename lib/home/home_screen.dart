@@ -52,19 +52,17 @@ class _HomeScreenState extends State<HomeScreen> {
               // Skill Card
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Kotlin"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Java"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Flutter"
@@ -74,19 +72,17 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Dart"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Android"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Spring Boot"
@@ -96,19 +92,17 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Firebase"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "MySQL"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                     imagePath: null,
                     skillTitle: "",
@@ -121,14 +115,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ]else...[
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Kotlin"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Java"
@@ -138,14 +131,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Flutter"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Dart"
@@ -155,14 +147,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Android"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "Spring Boot"
@@ -172,14 +163,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               Wrap(
                 alignment: WrapAlignment.center,
-                spacing: 20,
+                spacing: 60,
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
                       imagePath: AssetPath.officeImage,
                       skillTitle: "MySQL"
                   ),
-                  const SizedBox(width: 60),
                   CustomSkillCardWidget(
                     imagePath: null,
                     skillTitle: "",
