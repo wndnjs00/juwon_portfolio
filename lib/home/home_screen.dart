@@ -188,7 +188,6 @@ class _HomeScreenState extends State<HomeScreen> {
               showActionButton: true,
             ),
             const SizedBox(height: 40),
-
             // 프로젝트
             ProjectCardWidget(
                 title: "프로젝트 이름1",
