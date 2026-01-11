@@ -14,6 +14,7 @@ class ProjectCardWidget extends StatelessWidget {
     required this.androidUrl,
     required this.githubUrl,
     required this.isWeb,
+    required this.onTap,
     super.key,
   });
 
@@ -24,6 +25,7 @@ class ProjectCardWidget extends StatelessWidget {
   final String androidUrl;
   final String githubUrl;
   final bool isWeb;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +33,7 @@ class ProjectCardWidget extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
-        onTap: () {
-          // 카드 클릭 시 동작
-          debugPrint('Project Card Clicked: $title');
-        },
+        onTap: onTap,
         child: Container(
           width: isWeb ? 750 : double.infinity,
           padding: const EdgeInsets.all(24),

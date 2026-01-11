@@ -6,6 +6,10 @@ import 'package:juwon_portfolio/project/project_screen.dart';
 import 'package:juwon_portfolio/question/question_screen.dart';
 import 'package:juwon_portfolio/stack/stack_screen.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen1.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen2.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen3.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen4.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 
 void main() {
@@ -49,6 +53,34 @@ class MyApp extends StatelessWidget {
                 key: ValueKey("question"),
                 title:"Question",
                 child: QuestionScreen(),
+              );
+            },
+            RoutePage.portfolioDetail1: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail1"),
+                title:"PortfolioDetail1",
+                child: PortfolioDetailScreen1(),
+              );
+            },
+            RoutePage.portfolioDetail2: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail2"),
+                title:"PortfolioDetail2",
+                child: PortfolioDetailScreen2(),
+              );
+            },
+            RoutePage.portfolioDetail3: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail3"),
+                title:"PortfolioDetail3",
+                child: PortfolioDetailScreen3(),
+              );
+            },
+            RoutePage.portfolioDetail4: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail4"),
+                title:"PortfolioDetail4",
+                child: PortfolioDetailScreen4(),
               );
             },
           },

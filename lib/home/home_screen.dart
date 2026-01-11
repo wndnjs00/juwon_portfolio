@@ -3,6 +3,7 @@ import 'package:juwon_portfolio/util/screen_padding.dart';
 import 'package:juwon_portfolio/widgets/home/custom_home_main_title.dart';
 import 'package:juwon_portfolio/widgets/home/custom_stack_chip.dart';
 import 'package:juwon_portfolio/widgets/home/project_card_widget.dart';
+import 'package:juwon_portfolio/widgets/route_page.dart';
 import 'package:juwon_portfolio/widgets/util/common_scaffold.dart';
 import 'package:juwon_portfolio/widgets/footer/footer.dart';
 import 'package:juwon_portfolio/widgets/header/header.dart';
@@ -208,6 +209,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 androidUrl: "",
                 githubUrl: "",
                 isWeb: web,
+                onTap: () {
+                  RoutePage.movePage(context, RoutePage.portfolioDetail1);
+                },
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
@@ -239,6 +243,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 androidUrl: "",
                 githubUrl: "",
                 isWeb: web,
+                onTap: () {
+                  RoutePage.movePage(context, RoutePage.portfolioDetail2);
+                },
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
@@ -260,6 +267,9 @@ class _HomeScreenState extends State<HomeScreen> {
               androidUrl: "",
               githubUrl: "",
               isWeb: web,
+              onTap: () {
+                RoutePage.movePage(context, RoutePage.portfolioDetail3);
+              },
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
@@ -281,6 +291,9 @@ class _HomeScreenState extends State<HomeScreen> {
               androidUrl: "",
               githubUrl: "",
               isWeb: web,
+              onTap: () {
+                RoutePage.movePage(context, RoutePage.portfolioDetail4);
+              },
             ),
             const SizedBox(height: 60),
           ],
