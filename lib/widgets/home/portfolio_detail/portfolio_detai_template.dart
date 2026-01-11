@@ -4,7 +4,7 @@ import 'package:juwon_portfolio/widgets/home/custom_stack_chip.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class PortfolioDetaiTemplate extends StatelessWidget {
+class PortfolioDetaiTemplate extends StatefulWidget {
   const PortfolioDetaiTemplate({
     required this.title,
     required this.overview,
@@ -31,6 +31,20 @@ class PortfolioDetaiTemplate extends StatelessWidget {
   final String icon2Url;
 
   @override
+  State<PortfolioDetaiTemplate> createState() => _PortfolioDetaiTemplateState();
+}
+
+class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
+  final PageController _pageController = PageController();
+  int _currentIndex = 0;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -49,17 +63,16 @@ class PortfolioDetaiTemplate extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-
                 Divider(color: Colors.grey.shade300, height: 2),
-
                 const SizedBox(height: 24),
 
+                // 타이틀 + 아이콘
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Expanded(
                       child: Text(
-                        title,
+                        widget.title,
                         style: const TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
@@ -67,22 +80,22 @@ class PortfolioDetaiTemplate extends StatelessWidget {
                       ),
                     ),
 
-                    _circleIcon(icon1Image, icon1Url),
+                    _circleIcon(widget.icon1Image, widget.icon1Url),
                     const SizedBox(width: 12),
-                    _circleIcon(icon2Image, icon2Url),
+                    _circleIcon(widget.icon2Image, widget.icon2Url),
                   ],
                 ),
                 const SizedBox(height: 40),
 
                 _sectionTitle("개요"),
                 const SizedBox(height: 8),
-                _description(overview),
+                _description(widget.overview),
                 const SizedBox(height: 40),
 
                 Row(
                   children: [
-                    Expanded(child: _infoBlock("기간", period)),
-                    Expanded(child: _infoBlock("인원", people)),
+                    Expanded(child: _infoBlock("기간", widget.period)),
+                    Expanded(child: _infoBlock("인원", widget.people)),
                   ],
                 ),
                 const SizedBox(height: 40),
@@ -91,7 +104,7 @@ class PortfolioDetaiTemplate extends StatelessWidget {
                 const SizedBox(height: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: contributions
+                  children: widget.contributions
                       .map(
                         (e) => Padding(
                           padding: const EdgeInsets.only(bottom: 8),
@@ -145,26 +158,107 @@ class PortfolioDetaiTemplate extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
 
-                Center(
+                Align(
+                  alignment: Alignment.centerLeft,
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 1100),
                     child: SizedBox(
-                      height: 600,
-                      child: PageView(
-                        children: imagePaths.map((path) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(16),
-                              child: Image.asset(
-                                path,
-                                fit: BoxFit.cover,
-                                width: double.infinity,
-                                height: double.infinity,
+                      height: 800,
+                      child: Stack(
+                        children: [
+                          Positioned.fill(
+                            child: PageView(
+                              controller: _pageController,
+                              onPageChanged: (index) {
+                                setState(() {
+                                  _currentIndex = index;
+                                });
+                              },
+                              children: widget.imagePaths.map((path) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 8,
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(16),
+                                    child: Image.asset(
+                                      path,
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+
+                          // 왼쪽 화살표 (0번째면 숨김)
+                          if (_currentIndex != 0)
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              bottom: 0,
+                              child: Center(
+                                child: Material(
+                                  color: Colors.transparent,
+                                  shape: const CircleBorder(),
+                                  child: InkWell(
+                                    customBorder: const CircleBorder(),
+                                    onTap: () {
+                                      _pageController.animateToPage(
+                                        _currentIndex - 1,
+                                        duration: const Duration(
+                                          microseconds: 200,
+                                        ),
+                                        curve: Curves.easeInOut,
+                                      );
+                                    },
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(5),
+                                      child: Icon(
+                                        Icons.keyboard_arrow_left_rounded,
+                                        size: 48,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          );
-                        }).toList(),
+
+                          // 오른쪽 화살표 (마지막이면 숨김)
+                          if (_currentIndex != widget.imagePaths.length - 1)
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              bottom: 0,
+                              child: Center(
+                                child: Material(
+                                  color: Colors.transparent,
+                                  shape: const CircleBorder(),
+                                  child: InkWell(
+                                    customBorder: const CircleBorder(),
+                                    onTap: () {
+                                      _pageController.animateToPage(
+                                        _currentIndex + 1,
+                                        duration: const Duration(
+                                          microseconds: 200,
+                                        ),
+                                        curve: Curves.easeInOut,
+                                      );
+                                    },
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(5),
+                                      child: Icon(
+                                        Icons.keyboard_arrow_right_rounded,
+                                        size: 48,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
                     ),
                   ),

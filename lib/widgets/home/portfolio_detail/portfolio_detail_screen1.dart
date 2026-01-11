@@ -25,7 +25,7 @@ class _PortfolioDetailScreen1State extends State<PortfolioDetailScreen1> {
         ],
         imagePaths: [
           AssetPath.officeImage,
-          AssetPath.officeImage,
+          AssetPath.sampleImage,
           AssetPath.officeImage,
         ],
         icon1Image: AssetPath.officeImage,

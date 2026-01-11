@@ -6,6 +6,7 @@ import 'package:juwon_portfolio/project/project_screen.dart';
 import 'package:juwon_portfolio/question/question_screen.dart';
 import 'package:juwon_portfolio/stack/stack_screen.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
+import 'package:juwon_portfolio/widgets/home/custom_scroll_behavior.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen1.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen2.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen3.dart';
@@ -94,6 +95,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Home 입니다',
       debugShowCheckedModeBanner: false,
+      scrollBehavior: CustomScrollBehavior(),
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple.shade600),
