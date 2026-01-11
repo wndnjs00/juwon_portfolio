@@ -59,7 +59,7 @@ class Menu extends StatelessWidget {
             return CustomMenuTextButton(
               text: MenuUtil.menuList[index],
               textStyle: currentIndex == index
-                  ? TextUtil.get15(context, Colors.white)
+                  ? TextUtil.get15(context, Colors.white).copyWith(fontWeight: FontWeight.bold)
                   : TextUtil.get15(context, MyColor.gray10),
               size: Size(90, 30),
               onPressed: () {

@@ -7,8 +7,6 @@ import 'package:juwon_portfolio/widgets/route_page.dart';
 import 'package:juwon_portfolio/widgets/util/common_scaffold.dart';
 import 'package:juwon_portfolio/widgets/footer/footer.dart';
 import 'package:juwon_portfolio/widgets/header/header.dart';
-import 'package:juwon_portfolio/widgets/menu/menu.dart';
-import 'package:juwon_portfolio/widgets/menu/page_drawer.dart';
 import 'package:juwon_portfolio/widgets/util/screen_layout_builder.dart';
 
 import '../util/asset_path.dart';
@@ -16,13 +14,62 @@ import '../util/my_color.dart';
 import '../widgets/home/custom_skill_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  
+  const HomeScreen({
+    this.scrollTo,
+    super.key,
+  });
+
+  final String? scrollTo;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController _scrollController = ScrollController();
+  final GlobalKey _technicalSkillsKey = GlobalKey();
+  final GlobalKey _featuredProjectsKey = GlobalKey();
+  String? _lastScrollTo;
+
+  @override
+  void initState() {
+    super.initState();
+    _lastScrollTo = widget.scrollTo;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkScrollParameter();
+    });
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // 위젯이 재생성되었을 때 스크롤 파라미터 확인
+    if (_lastScrollTo != widget.scrollTo) {
+      _lastScrollTo = widget.scrollTo;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _checkScrollParameter();
+      });
+    }
+  }
+
+  @override
+  void didUpdateWidget(HomeScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.scrollTo != widget.scrollTo) {
+      _lastScrollTo = widget.scrollTo;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _checkScrollParameter();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ScreenLayoutBuilder(
@@ -30,9 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
           var width = MediaQuery.of(context).size.width;
 
       return CommonScaffold(
-          currentIndex: 0,
+          currentIndex: _getCurrentIndex(),
           screenModel: screenModel,
           horizontalPadding: ScreenPadding.get(web, width),
+          scrollController: _scrollController,
 
           header: Header(
               title: "이승현",
@@ -45,6 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             SizedBox(height: 50),
             CustomHomeMainTitle(
+              key: _technicalSkillsKey,
               title: "Technical Skills",
               subTitle: "프로젝트에서 활용한 주요 기술스택입니다.",
               showActionButton: false,
@@ -184,6 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             const SizedBox(height: 100),
             CustomHomeMainTitle(
+              key: _featuredProjectsKey,
               title: "Featured Projects",
               subTitle: "주요 프로젝트를 소개합니다",
               showActionButton: true,
@@ -306,4 +356,36 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     });
   }
+
+  void _scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  int _getCurrentIndex() {
+    final scrollTo = widget.scrollTo;
+    if (scrollTo == 'skills') {
+      return 1; // 기술스택
+    } else if (scrollTo == 'projects') {
+      return 2; // 프로젝트
+    }
+    return 0; // 홈
+  }
+
+  void _checkScrollParameter() {
+    final scrollTo = widget.scrollTo ?? _lastScrollTo;
+
+    if (scrollTo == 'skills') {
+      _scrollToSection(_technicalSkillsKey);
+    } else if (scrollTo == 'projects') {
+      _scrollToSection(_featuredProjectsKey);
+    }
+  }
+
 }

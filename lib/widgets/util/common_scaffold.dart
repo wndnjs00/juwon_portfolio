@@ -16,6 +16,7 @@ class CommonScaffold extends StatelessWidget {
     required this.footer,
     this.horizontalPadding = 0,
     this.backgroundColor = MyColor.contentBackground,
+    this.scrollController,
     super.key
   });
 
@@ -26,6 +27,7 @@ class CommonScaffold extends StatelessWidget {
   final Widget contents;
   final Widget footer;
   final Color backgroundColor;
+  final ScrollController? scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class CommonScaffold extends StatelessWidget {
 
           Expanded(
               child: SingleChildScrollView(
+                controller: scrollController,
                 child: Column(
                   children: [
                     header,

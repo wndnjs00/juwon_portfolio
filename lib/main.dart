@@ -29,10 +29,11 @@ class MyApp extends StatelessWidget {
       locationBuilder: RoutesLocationBuilder(
           routes: {
             RoutePage.home: (context, state, data){
-              return const BeamPage(
-                key: ValueKey("home"),
+              final scrollTo = state.queryParameters['scroll'];
+              return BeamPage(
+                key: ValueKey("home_${scrollTo ?? ''}"),
                 title:"Home",
-                child: HomeScreen(),
+                child: HomeScreen(scrollTo: scrollTo),
               );
             },
             RoutePage.stack: (context, state, data){
