@@ -28,4 +28,10 @@ class MenuUtil{
 
     RoutePage.movePage(context, routeName);
   }
+
+  static void scrollToProject(BuildContext context, int projectIndex) {
+    // 프로젝트 인덱스는 0부터 시작하지만, 쿼리 파라미터는 1부터 시작
+    final routeName = "${RoutePage.home}?scroll=project${projectIndex + 1}";
+    RoutePage.movePage(context, routeName);
+  }
 }

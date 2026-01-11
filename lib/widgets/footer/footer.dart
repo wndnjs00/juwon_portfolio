@@ -110,7 +110,9 @@ class Footer extends StatelessWidget {
                         MyColor.gray10,
                       ).copyWith(fontSize: 13),
                       size: const Size(120, 28),
-                      onPressed: () {},
+                      onPressed: () {
+                        MenuUtil.scrollToProject(context, index);
+                      },
                     );
                   }),
                 ],

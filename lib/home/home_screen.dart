@@ -30,6 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _technicalSkillsKey = GlobalKey();
   final GlobalKey _featuredProjectsKey = GlobalKey();
+  final GlobalKey _project1Key = GlobalKey();
+  final GlobalKey _project2Key = GlobalKey();
+  final GlobalKey _project3Key = GlobalKey();
+  final GlobalKey _project4Key = GlobalKey();
   String? _lastScrollTo;
 
   @override
@@ -241,6 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 40),
             // 프로젝트
             ProjectCardWidget(
+                key: _project1Key,
                 title: "프로젝트 이름1",
                 description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
                 imagePath: AssetPath.officeImage,
@@ -265,6 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
+                key: _project2Key,
                 title: "프로젝트 이름2",
                 description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
                 imagePath: AssetPath.officeImage,
@@ -299,6 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
+              key: _project3Key,
               title: "프로젝트 이름3",
               description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
               imagePath: AssetPath.officeImage,
@@ -323,6 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 20),
             ProjectCardWidget(
+              key: _project4Key,
               title: "프로젝트 이름4",
               description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
               imagePath: AssetPath.officeImage,
@@ -385,6 +393,14 @@ class _HomeScreenState extends State<HomeScreen> {
       _scrollToSection(_technicalSkillsKey);
     } else if (scrollTo == 'projects') {
       _scrollToSection(_featuredProjectsKey);
+    } else if (scrollTo == 'project1') {
+      _scrollToSection(_project1Key);
+    } else if (scrollTo == 'project2') {
+      _scrollToSection(_project2Key);
+    } else if (scrollTo == 'project3') {
+      _scrollToSection(_project3Key);
+    } else if (scrollTo == 'project4') {
+      _scrollToSection(_project4Key);
     }
   }
 
