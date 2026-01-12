@@ -69,9 +69,11 @@ class _QuestionTabletAndMobileState extends State<QuestionTabletAndMobile> {
           size: Size(double.infinity, 56),
           backgroundColor: MyColor.primaryBlue,
           radius: 0,
-          onPressed: !qUtil.checkValidation() ? null : () async {
-            await _submitInquiry(context, qUtil);
-          },
+          // TODO: 문의뱓기 구현할때, 주석제거하고 null을 제거하기
+          onPressed: null, // 일시적으로 문의 기능 비활성화
+          // onPressed: !qUtil.checkValidation() ? null : () async {
+          //   await _submitInquiry(context, qUtil);
+          // },
         ),
         const SizedBox(height: 100)
       ],

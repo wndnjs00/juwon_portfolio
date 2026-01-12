@@ -32,6 +32,15 @@ class QuestionSubtitle extends StatelessWidget {
       ),
     );
 
+    var text3 = Text(
+      "현재는 잠시 문의를 받지 않고있습니다.",
+      style: TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.w700,
+        color: MyColor.gray90,
+      ),
+    );
+
     if(screenModel.mobile){
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,18 +48,27 @@ class QuestionSubtitle extends StatelessWidget {
           const SizedBox(height: 50),
           text1,
           const SizedBox(height: 5),
-          text2
+          text2,
+          const SizedBox(height: 16),
+          text3
         ],
       );
     }
 
     return Padding(
         padding: EdgeInsets.only(top: 96),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          text1,
-          const SizedBox(width: 16),
-          text2,
+          Row(
+            children: [
+              text1,
+              const SizedBox(width: 16),
+              text2,
+            ],
+          ),
+          const SizedBox(height: 16),
+          text3
         ],
       ),
     );
