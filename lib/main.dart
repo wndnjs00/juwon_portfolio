@@ -1,6 +1,8 @@
 import 'package:beamer/beamer.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:juwon_portfolio/config/firebase_config.dart';
 import 'package:juwon_portfolio/home/home_screen.dart';
 import 'package:juwon_portfolio/project/project_screen.dart';
 import 'package:juwon_portfolio/question/question_screen.dart';
@@ -13,8 +15,20 @@ import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_s
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen4.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
+
+  try {
+    await Firebase.initializeApp(
+      options: FirebaseConfig.options,
+    );
+    debugPrint('Firebase 초기화 성공');
+  } catch (e) {
+    // Firebase 초기화 실패 시에도 앱은 실행되도록
+    debugPrint('Firebase 초기화 실패: $e');
+  }
+  
   runApp(MyApp());
 }
 

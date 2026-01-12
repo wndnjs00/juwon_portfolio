@@ -43,3 +43,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Firebase 설정 파일 (민감한 정보 포함)
+lib/config/firebase_config.dart
+firebase.json
+.firebaserc
+lib/firebase_options.dart
