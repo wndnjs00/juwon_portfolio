@@ -130,28 +130,58 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                   runSpacing: 8,
                   children: const [
                     CustomStackChip(
-                      text: "JavaScript",
-                      backgroundColor: MyColor.tagGreen,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Kotlin",
-                      backgroundColor: MyColor.tagOrange,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Jetpack",
+                      text: "Android",
                       backgroundColor: MyColor.tagPink,
                       textColor: Colors.black,
                     ),
                     CustomStackChip(
-                      text: "JavaScript",
+                      text: "Kotlin",
+                      backgroundColor: MyColor.tagPink,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "MVVM Pattern",
                       backgroundColor: MyColor.tagPurple,
                       textColor: Colors.black,
                     ),
                     CustomStackChip(
-                      text: "JavaScript",
+                      text: "Retrofit2",
                       backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "Okhttp3",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "Flow",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "Coroutine",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "Hilt",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "XML",
+                      backgroundColor: MyColor.tagYellow,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "RoomDB",
+                      backgroundColor: MyColor.tagOrange,
+                      textColor: Colors.black,
+                    ),
+                    CustomStackChip(
+                      text: "Firebase",
+                      backgroundColor: MyColor.tagOrange,
                       textColor: Colors.black,
                     ),
                   ],
@@ -281,7 +311,7 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
   Widget _description(String text) {
     return Text(
       text,
-      style: TextStyle(fontSize: 14, height: 1.6, color: Colors.grey.shade700),
+      style: TextStyle(fontSize: 15, height: 1.6, color: Colors.grey.shade700),
     );
   }
 

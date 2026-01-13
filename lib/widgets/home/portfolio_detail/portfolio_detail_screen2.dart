@@ -14,24 +14,26 @@ class _PortfolioDetailScreen2State extends State<PortfolioDetailScreen2> {
   @override
   Widget build(BuildContext context) {
     return PortfolioDetaiTemplate(
-      title: "데이터 시각화 컴포넌트2",
-      overview: "비즈니스 목표에 맞춘 핵심 과제를 정의하고, 사용자 리서치와 데이터 분석을 통해 실행 전략을 수립했습니다22",
-      period: "2025.07 ~ 현재",
-      people: "개인 프로젝트2",
+      title: "맛고 [요리레시피 앱]",
+      overview: "지역별 특산물을 활용한 요리레시피 제공 앱입니다.",
+      period: "2024.05.27 ~ 07.05",
+      people: "팀 프로젝트 [안드로이드 개발자 4명]",
       contributions: [
-        '핵심 플로우 전환율 최대 18% 향상2',
-        '디자인 시스템 구축 및 컴포넌트화2',
-        '지표 기반의 실험과 학습 문화 정착2',
+        '지도기반 지역별 특산물 정보확인',
+        '특산물을 활용한 레시피 제공 ',
+        '레시피 작성기능',
+        '레시피 북마크 기능',
+        '로그인 & 회원가입',
       ],
       imagePaths: [
         AssetPath.officeImage,
         AssetPath.officeImage,
         AssetPath.officeImage,
       ],
-      icon1Image: AssetPath.officeImage,
-      icon1Url: "https://play.google.com",
-      icon2Image: AssetPath.officeImage,
-      icon2Url: "https://play.google.com",
+      icon1Image: AssetPath.playstoreImage,
+      icon1Url: "https://play.google.com/store/apps/details?id=nbc.group.recipes",
+      icon2Image: AssetPath.githubImage2,
+      icon2Url: "https://github.com/nbc-group-4/recipe",
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:juwon_portfolio/widgets/route_page.dart';
 
 class MenuUtil{
   static final List<String> menuList = ["홈", "기술스택", "프로젝트", "문의하기"];
-  static final List<String> projectList = ["프로젝트1", "프로젝트2", "프로젝트3", "프로젝트4"];
+  static final List<String> projectList = ["지키미", "맛고", "readway", "MiniYoutube", "WaterLog"];
 
   static void changeIndex(BuildContext context, int index){
 

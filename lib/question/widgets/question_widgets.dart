@@ -71,7 +71,10 @@ class QuestionWidgets {
         CustomTextFormField(
           controller: controller,
           textInputType: TextInputType.multiline,
-          hintText: "문의 내용을 작성해주세요.\n문의 내용에 아래내용이 포함되면 더욱 빠르게 파악이 가능해요",
+          hintText: "문의 내용을 작성해주세요.\n문의 내용에 아래내용이 포함되면 더욱 빠르게 파악이 가능해요"
+              "\n- 구현기능 상세설명"
+              "\n- 원하는 디자인 레퍼런스 링크"
+              "\n- 이용 목적",
           maxLines: 12,
           textHeight: 1.5,
         )

@@ -14,24 +14,26 @@ class _PortfolioDetailScreen3State extends State<PortfolioDetailScreen3> {
   @override
   Widget build(BuildContext context) {
     return PortfolioDetaiTemplate(
-      title: "데이터 시각화 컴포넌트3",
-      overview: "비즈니스 목표에 맞춘 핵심 과제를 정의하고, 사용자 리서치와 데이터 분석을 통해 실행 전략을 수립했습니다33",
-      period: "2025.07 ~ 현재",
-      people: "개인 프로젝트3",
+      title: "readway [독서기록 앱]",
+      overview: "내가 읽은 책을 책장에 저장하고, 책의 페이지수와 리뷰를 쉽게 기록하기위한 목적으로 개발했습니다.",
+      period: "2025.11.11 ~ 11.17",
+      people: "개인 프로젝트",
       contributions: [
-        '핵심 플로우 전환율 최대 18% 향상3',
-        '디자인 시스템 구축 및 컴포넌트화3',
-        '지표 기반의 실험과 학습 문화 정착3',
+        '책장에 좋아요한 책 저장',
+        '책검색 기능',
+        '책 세부정보 확인 기능',
+        '독서 페이지 기록 & 리뷰 기록',
+        '다국어 지원',
       ],
       imagePaths: [
         AssetPath.officeImage,
         AssetPath.officeImage,
         AssetPath.officeImage,
       ],
-      icon1Image: AssetPath.officeImage,
+      icon1Image: AssetPath.playstoreImage,
       icon1Url: "https://play.google.com",
-      icon2Image: AssetPath.officeImage,
-      icon2Url: "https://play.google.com",
+      icon2Image: AssetPath.githubImage2,
+      icon2Url: "https://github.com/wndnjs00/readway",
     );
   }
 }

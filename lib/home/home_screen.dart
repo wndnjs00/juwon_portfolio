@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey _project2Key = GlobalKey();
   final GlobalKey _project3Key = GlobalKey();
   final GlobalKey _project4Key = GlobalKey();
+  final GlobalKey _project5Key = GlobalKey();
   String? _lastScrollTo;
 
   @override
@@ -336,8 +337,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     textColor: Colors.black,
                   ),
                 ],
-                androidUrl: "",
-                githubUrl: "",
+                androidUrl: "https://play.google.com/store/apps/details?id=nbc.group.recipes",
+                githubUrl: "https://github.com/nbc-group-4/recipe",
                 isWeb: web,
                 onTap: () {
                   RoutePage.movePage(context, RoutePage.portfolioDetail2);
@@ -347,22 +348,37 @@ class _HomeScreenState extends State<HomeScreen> {
             ProjectCardWidget(
               key: _project3Key,
               title: "readway",
-              description: "책을 책장에 저장하고 손쉽게 기록할 수 있는 앱",
+              description: "손쉽게 기록하는 독서기록 앱",
               imagePath: AssetPath.officeImage,
               customStackChip: const [
                 CustomStackChip(
-                  text: "TypeScript",
+                  text: "Flutter",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Dart",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "MVVM Pattern",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Riverpod",
                   backgroundColor: MyColor.tagYellow,
                   textColor: Colors.black,
                 ),
                 CustomStackChip(
-                  text: "React",
-                  backgroundColor: MyColor.tagPurple,
+                  text: "Firebase",
+                  backgroundColor: MyColor.tagOrange,
                   textColor: Colors.black,
                 ),
               ],
               androidUrl: "",
-              githubUrl: "",
+              githubUrl: "https://github.com/wndnjs00/readway",
               isWeb: web,
               onTap: () {
                 RoutePage.movePage(context, RoutePage.portfolioDetail3);
@@ -376,22 +392,90 @@ class _HomeScreenState extends State<HomeScreen> {
               imagePath: AssetPath.officeImage,
               customStackChip: const [
                 CustomStackChip(
-                  text: "TypeScript",
+                  text: "Android",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Kotlin",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "MVVM Pattern",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Retrofit2",
                   backgroundColor: MyColor.tagYellow,
                   textColor: Colors.black,
                 ),
                 CustomStackChip(
-                  text: "React",
+                  text: "Okhttp3",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "RoomDB",
+                  backgroundColor: MyColor.tagOrange,
+                  textColor: Colors.black,
+                ),
+              ],
+              androidUrl: "",
+              githubUrl: "https://github.com/wndnjs00/MiniYouTube",
+              isWeb: web,
+              onTap: () {
+                RoutePage.movePage(context, RoutePage.portfolioDetail4);
+              },
+            ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
+              key: _project5Key,
+              title: "WaterLog [제작중]",
+              description: "꾸준한 물섭취를 위한, 물섭취 기록앱",
+              imagePath: AssetPath.officeImage,
+              customStackChip: const [
+                CustomStackChip(
+                  text: "Android",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Kotlin",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Compose",
                   backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "MVVM Pattern",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Retrofit2",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Okhttp3",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Firebase",
+                  backgroundColor: MyColor.tagOrange,
                   textColor: Colors.black,
                 ),
               ],
               androidUrl: "",
               githubUrl: "",
               isWeb: web,
-              onTap: () {
-                RoutePage.movePage(context, RoutePage.portfolioDetail4);
-              },
+              onTap: () {},
             ),
             const SizedBox(height: 60),
           ],
@@ -441,6 +525,8 @@ class _HomeScreenState extends State<HomeScreen> {
       _scrollToSection(_project3Key);
     } else if (scrollTo == 'project4') {
       _scrollToSection(_project4Key);
+    } else if (scrollTo == 'project5') {
+      _scrollToSection(_project5Key);
     }
   }
 
