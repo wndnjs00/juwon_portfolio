@@ -44,7 +44,7 @@ class Header extends StatelessWidget {
               onTap: () {},
               child: ClipOval(
                 child: Image.asset(
-                  AssetPath.officeImage,
+                  AssetPath.profileImage,
                   width: 100,
                   height: 100,
                   fit: BoxFit.cover,

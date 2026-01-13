@@ -33,11 +33,11 @@ class Menu extends StatelessWidget {
           const SizedBox(width: 20),
           CircleAvatar(
             radius: 20,
-            backgroundImage: AssetImage(AssetPath.officeImage),
+            backgroundImage: AssetImage(AssetPath.profileImage),
           ),
           const SizedBox(width: 10),
           Text(
-            "이승현",
+            "전주원",
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w600,
@@ -75,7 +75,7 @@ class Menu extends StatelessWidget {
                 onTap: (){},
                 child: ClipOval(
                   child: Image.asset(
-                    AssetPath.officeImage,
+                    AssetPath.githubImage,
                     width: 30,
                     height: 30,
                     fit: BoxFit.cover,
@@ -87,7 +87,7 @@ class Menu extends StatelessWidget {
                 onTap: (){},
                 child: ClipOval(
                   child: Image.asset(
-                    AssetPath.officeImage,
+                    AssetPath.blogImage,
                     width: 30,
                     height: 30,
                     fit: BoxFit.cover,
@@ -99,7 +99,7 @@ class Menu extends StatelessWidget {
                 onTap: (){},
                 child: ClipOval(
                   child: Image.asset(
-                    AssetPath.officeImage,
+                    AssetPath.emailImage,
                     width: 30,
                     height: 30,
                     fit: BoxFit.cover,

@@ -73,15 +73,15 @@ class ProjectCardWidget extends StatelessWidget {
                     Row(
                       children: [
                         CustomAndroidGithubBtn(
-                          text: "Android 앱",
-                          url: androidUrl,
-                          iconPath: AssetPath.officeImage,
+                          text: "GitHub",
+                          url: githubUrl,
+                          iconPath: AssetPath.githubImage2,
                         ),
                         const SizedBox(width: 10),
                         CustomAndroidGithubBtn(
-                          text: "GitHub",
+                          text: "Android 앱",
                           url: androidUrl,
-                          iconPath: AssetPath.officeImage,
+                          iconPath: AssetPath.androidImage2,
                         ),
                       ],
                     ),

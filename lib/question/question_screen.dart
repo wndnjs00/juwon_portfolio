@@ -71,7 +71,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             ],
           ),
           footer: const Footer(
-              title: "이승현",
+              title: "전주원",
               subTitle: "Android Developer"
           ),
         );

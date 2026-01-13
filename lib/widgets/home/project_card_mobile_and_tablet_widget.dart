@@ -58,13 +58,13 @@ class ProjectCardMobileAndTabletWidget extends StatelessWidget {
             CustomAndroidGithubBtn(
               text: "Android 앱",
               url: androidUrl,
-              iconPath: AssetPath.officeImage,
+              iconPath: AssetPath.androidImage2,
             ),
             const SizedBox(width: 10),
             CustomAndroidGithubBtn(
               text: "GitHub",
-              url: androidUrl,
-              iconPath: AssetPath.officeImage,
+              url: githubUrl,
+              iconPath: AssetPath.githubImage2,
             ),
           ],
         ),

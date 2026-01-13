@@ -25,11 +25,11 @@ class MenuTabletAndMobile extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 20,
-            backgroundImage: AssetImage(AssetPath.officeImage),
+            backgroundImage: AssetImage(AssetPath.profileImage),
           ),
           const SizedBox(width: 10),
           Text(
-            "이승현",
+            "전주원",
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w600,

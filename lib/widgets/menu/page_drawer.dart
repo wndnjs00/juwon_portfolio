@@ -71,17 +71,17 @@ class PageDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BottomCircleImage(
-                  imagePath: AssetPath.officeImage,
+                  imagePath: AssetPath.githubImage,
                   onTap: (){},
               ),
               const SizedBox(width: 15),
               BottomCircleImage(
-                imagePath: AssetPath.officeImage,
+                imagePath: AssetPath.blogImage,
                 onTap: (){},
               ),
               const SizedBox(width: 15),
               BottomCircleImage(
-                imagePath: AssetPath.officeImage,
+                imagePath: AssetPath.emailImage,
                 onTap: (){},
               ),
             ],

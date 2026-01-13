@@ -100,7 +100,7 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                 ),
                 const SizedBox(height: 40),
 
-                _sectionTitle("기여와 성과"),
+                _sectionTitle("주요기능"),
                 const SizedBox(height: 12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

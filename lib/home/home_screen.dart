@@ -87,8 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollController: _scrollController,
 
           header: Header(
-              title: "이승현",
-              subTitle: "Flutter와 React를 중심으로 빠른 UX와 견고한 구조를 설계하는 프론트엔드 개발자입니다.\n항상 열정적으로 임하며, 어떤 도전에도 긍정적인 태도로 임합니다.",
+              title: "전주원",
+              subTitle: "사용자의 편리함과 가치를 우선으로 고민하는 앱 개발자입니다.\n새로운 기술을 빠르게 습득하고, 이를 통해 더 나은 사용자 경험을 제공하는것을 목표로 합니다.",
               developerTitle: "Android Developer",
               screenModel: screenModel
           ),
@@ -113,15 +113,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 10,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.kotlinImage,
                       skillTitle: "Kotlin"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.javaImage,
                       skillTitle: "Java"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.flutterImage,
                       skillTitle: "Flutter"
                   ),
                 ],
@@ -133,15 +133,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 10,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.dartImage,
                       skillTitle: "Dart"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.androidImage2,
                       skillTitle: "Android"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.springBootImage,
                       skillTitle: "Spring Boot"
                   ),
                 ],
@@ -153,11 +153,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 10,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.firebaseImage,
                       skillTitle: "Firebase"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.mysqlImage,
                       skillTitle: "MySQL"
                   ),
                   CustomSkillCardWidget(
@@ -176,11 +176,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.kotlinImage,
                       skillTitle: "Kotlin"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.javaImage,
                       skillTitle: "Java"
                   ),
                 ],
@@ -192,11 +192,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.flutterImage,
                       skillTitle: "Flutter"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.dartImage,
                       skillTitle: "Dart"
                   ),
                 ],
@@ -208,11 +208,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.androidImage2,
                       skillTitle: "Android"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.springBootImage,
                       skillTitle: "Spring Boot"
                   ),
                 ],
@@ -224,11 +224,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 runSpacing: 20,
                 children: [
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.firebaseImage,
                       skillTitle: "Firebase"
                   ),
                   CustomSkillCardWidget(
-                      imagePath: AssetPath.officeImage,
+                      imagePath: AssetPath.mysqlImage,
                       skillTitle: "MySQL"
                   ),
                 ],
@@ -246,23 +246,48 @@ class _HomeScreenState extends State<HomeScreen> {
             // 프로젝트
             ProjectCardWidget(
                 key: _project1Key,
-                title: "프로젝트 이름1",
-                description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+                title: "지키미",
+                description: "재난발생시, 주변 대피소 정보를 한눈에 확인할 수 있는 안전지킴이 앱",
                 imagePath: AssetPath.officeImage,
                 customStackChip: const [
                   CustomStackChip(
-                      text: "TypeScript",
-                      backgroundColor: MyColor.tagYellow,
+                    text: "Android",
+                    backgroundColor: MyColor.tagPink,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                      text: "Kotlin",
+                      backgroundColor: MyColor.tagPink,
                       textColor: Colors.black,
                   ),
                   CustomStackChip(
-                      text: "React",
+                      text: "MVVM Pattern",
                       backgroundColor: MyColor.tagPurple,
                       textColor: Colors.black,
                   ),
+                  CustomStackChip(
+                    text: "Retrofit2",
+                    backgroundColor: MyColor.tagYellow,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "Okhttp3",
+                    backgroundColor: MyColor.tagYellow,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "RoomDB",
+                    backgroundColor: MyColor.tagOrange,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "Firebase",
+                    backgroundColor: MyColor.tagOrange,
+                    textColor: Colors.black,
+                  ),
                 ],
-                androidUrl: "",
-                githubUrl: "",
+                androidUrl: "https://play.google.com/store/apps/details?id=com.myapp.jikimi",
+                githubUrl: "https://github.com/wndnjs00/jikimi",
                 isWeb: web,
                 onTap: () {
                   RoutePage.movePage(context, RoutePage.portfolioDetail1);
@@ -271,28 +296,43 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             ProjectCardWidget(
                 key: _project2Key,
-                title: "프로젝트 이름2",
-                description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+                title: "맛고",
+                description: "지역별 특산물을 활용한 요리레시피 제공앱",
                 imagePath: AssetPath.officeImage,
                 customStackChip: const [
                   CustomStackChip(
-                      text: "TypeScript",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
+                    text: "Android",
+                    backgroundColor: MyColor.tagPink,
+                    textColor: Colors.black,
                   ),
                   CustomStackChip(
-                      text: "React",
-                      backgroundColor: MyColor.tagPurple,
-                      textColor: Colors.black,
+                    text: "Kotlin",
+                    backgroundColor: MyColor.tagPink,
+                    textColor: Colors.black,
                   ),
                   CustomStackChip(
-                      text: "React",
-                      backgroundColor: MyColor.tagPurple,
-                      textColor: Colors.black,
-                  ),
-                  CustomStackChip(
-                    text: "React",
+                    text: "MVVM Pattern",
                     backgroundColor: MyColor.tagPurple,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "Retrofit2",
+                    backgroundColor: MyColor.tagYellow,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "Okhttp3",
+                    backgroundColor: MyColor.tagYellow,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "RoomDB",
+                    backgroundColor: MyColor.tagOrange,
+                    textColor: Colors.black,
+                  ),
+                  CustomStackChip(
+                    text: "Firebase",
+                    backgroundColor: MyColor.tagOrange,
                     textColor: Colors.black,
                   ),
                 ],
@@ -306,8 +346,8 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             ProjectCardWidget(
               key: _project3Key,
-              title: "프로젝트 이름3",
-              description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+              title: "readway",
+              description: "책을 책장에 저장하고 손쉽게 기록할 수 있는 앱",
               imagePath: AssetPath.officeImage,
               customStackChip: const [
                 CustomStackChip(
@@ -331,8 +371,8 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             ProjectCardWidget(
               key: _project4Key,
-              title: "프로젝트 이름4",
-              description: "React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.React 앱의 서버사이드 렌더링에서 사용할 수 있는 라이브러리입니다.",
+              title: "MiniYoutube",
+              description: "카테고리별로 모아보는 나만의 MiniYoutube 앱",
               imagePath: AssetPath.officeImage,
               customStackChip: const [
                 CustomStackChip(
@@ -358,7 +398,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
 
           footer: const Footer(
-              title: "이승현",
+              title: "전주원",
               subTitle: "Android Developer"
           ),
       );

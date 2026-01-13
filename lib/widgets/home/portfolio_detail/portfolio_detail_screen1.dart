@@ -14,24 +14,27 @@ class _PortfolioDetailScreen1State extends State<PortfolioDetailScreen1> {
   @override
   Widget build(BuildContext context) {
     return PortfolioDetaiTemplate(
-        title: "데이터 시각화 컴포넌트",
-        overview: "비즈니스 목표에 맞춘 핵심 과제를 정의하고, 사용자 리서치와 데이터 분석을 통해 실행 전략을 수립했습니다.",
-        period: "2025.07 ~ 현재",
+        title: "지키미 [안전지킴이 앱]",
+        overview: "재난발생시, 주변 대피소 정보를 한눈에 확인할 수 있는 안전지킴이 앱입니다.\n사용자들의 피드백을 받고 수정하며 보완해나가기위해 노력하고 있습니다.",
+        period: "2024.08.16 ~ 현재",
         people: "개인 프로젝트",
         contributions: [
-          '핵심 플로우 전환율 최대 18% 향상',
-          '디자인 시스템 구축 및 컴포넌트화',
-          '지표 기반의 실험과 학습 문화 정착',
+          '현재 위치 반경 5Km 이내의 대피소 정보확인',
+          '좋아요를 통한 대피소 저장',
+          '텍스트 & 음성검색 기능',
+          'AI를 통한 재난 대처법 제공',
+          '재난 커뮤니티 기능',
+          '로그인 & 회원가입',
         ],
         imagePaths: [
           AssetPath.officeImage,
           AssetPath.sampleImage,
           AssetPath.officeImage,
         ],
-        icon1Image: AssetPath.officeImage,
-        icon1Url: "https://play.google.com",
-        icon2Image: AssetPath.officeImage,
-        icon2Url: "https://play.google.com",
+        icon1Image: AssetPath.playstoreImage,
+        icon1Url: "https://play.google.com/store/apps/details?id=com.myapp.jikimi",
+        icon2Image: AssetPath.githubImage2,
+        icon2Url: "https://github.com/wndnjs00/jikimi",
     );
   }
 }

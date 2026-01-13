@@ -44,17 +44,17 @@ class Footer extends StatelessWidget {
                   Row(
                     children: [
                       BottomCircleImage(
-                        imagePath: AssetPath.officeImage,
+                        imagePath: AssetPath.githubImage,
                         onTap: () {},
                       ),
                       const SizedBox(width: 6),
                       BottomCircleImage(
-                        imagePath: AssetPath.officeImage,
+                        imagePath: AssetPath.blogImage,
                         onTap: () {},
                       ),
                       const SizedBox(width: 6),
                       BottomCircleImage(
-                        imagePath: AssetPath.officeImage,
+                        imagePath: AssetPath.emailImage,
                         onTap: () {},
                       ),
                     ],
@@ -133,7 +133,7 @@ class Footer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "© 2026 이승현. All rights reserved.",
+                  "© 2026 전주원. All rights reserved.",
                   style: TextUtil.get14(
                     context,
                     MyColor.gray10,
