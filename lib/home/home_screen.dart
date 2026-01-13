@@ -380,6 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
               androidUrl: "",
               githubUrl: "https://github.com/wndnjs00/readway",
               isWeb: web,
+              showAndroidBtn: false,
               onTap: () {
                 RoutePage.movePage(context, RoutePage.portfolioDetail3);
               },
@@ -425,6 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
               androidUrl: "",
               githubUrl: "https://github.com/wndnjs00/MiniYouTube",
               isWeb: web,
+              showAndroidBtn: false,
               onTap: () {
                 RoutePage.movePage(context, RoutePage.portfolioDetail4);
               },
@@ -475,6 +477,8 @@ class _HomeScreenState extends State<HomeScreen> {
               androidUrl: "",
               githubUrl: "",
               isWeb: web,
+              showAndroidBtn: false,
+              showGithubBtn: false,
               onTap: () {},
             ),
             const SizedBox(height: 60),

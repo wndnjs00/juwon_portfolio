@@ -15,6 +15,8 @@ class ProjectCardWidget extends StatelessWidget {
     required this.githubUrl,
     required this.isWeb,
     required this.onTap,
+    this.showGithubBtn = true,
+    this.showAndroidBtn = true,
     super.key,
   });
 
@@ -26,6 +28,8 @@ class ProjectCardWidget extends StatelessWidget {
   final String githubUrl;
   final bool isWeb;
   final VoidCallback onTap;
+  final bool showGithubBtn;
+  final bool showAndroidBtn;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,7 @@ class ProjectCardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         onTap: onTap,
         child: Container(
-          width: isWeb ? 750 : double.infinity,
+          width: isWeb ? 1000 : double.infinity,
           padding: const EdgeInsets.all(24),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -68,23 +72,27 @@ class ProjectCardWidget extends StatelessWidget {
 
                     Wrap(spacing: 8, runSpacing: 8, children: customStackChip),
 
-                    const SizedBox(height: 16),
-
-                    Row(
-                      children: [
-                        CustomAndroidGithubBtn(
-                          text: "GitHub",
-                          url: githubUrl,
-                          iconPath: AssetPath.githubImage2,
-                        ),
-                        const SizedBox(width: 10),
-                        CustomAndroidGithubBtn(
-                          text: "Android 앱",
-                          url: androidUrl,
-                          iconPath: AssetPath.androidImage2,
-                        ),
-                      ],
-                    ),
+                    if (showGithubBtn || showAndroidBtn) ...[
+                      const SizedBox(height: 16),
+                      Row(
+                        children: [
+                          if (showGithubBtn) ...[
+                            CustomAndroidGithubBtn(
+                              text: "GitHub",
+                              url: githubUrl,
+                              iconPath: AssetPath.githubImage2,
+                            ),
+                            if (showAndroidBtn) const SizedBox(width: 10),
+                          ],
+                          if (showAndroidBtn)
+                            CustomAndroidGithubBtn(
+                              text: "Android 앱",
+                              url: androidUrl,
+                              iconPath: AssetPath.androidImage2,
+                            ),
+                        ],
+                      ),
+                    ],
                   ],
                 ),
               ),
@@ -93,8 +101,8 @@ class ProjectCardWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
                   imagePath,
-                  width: 300,
-                  height: 180,
+                  width: 500,
+                  height: 300,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -106,7 +114,9 @@ class ProjectCardWidget extends StatelessWidget {
               customStackChip: customStackChip,
               androidUrl: androidUrl,
               githubUrl: githubUrl,
-              imagePath: imagePath
+              imagePath: imagePath,
+              showGithubBtn: showGithubBtn,
+              showAndroidBtn: showAndroidBtn,
           )
         ),
       ),

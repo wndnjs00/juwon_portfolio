@@ -13,6 +13,8 @@ class ProjectCardMobileAndTabletWidget extends StatelessWidget {
     required this.androidUrl,
     required this.githubUrl,
     required this.imagePath,
+    this.showGithubBtn = true,
+    this.showAndroidBtn = true,
     super.key,
   });
 
@@ -22,6 +24,8 @@ class ProjectCardMobileAndTabletWidget extends StatelessWidget {
   final String androidUrl;
   final String githubUrl;
   final String imagePath;
+  final bool showGithubBtn;
+  final bool showAndroidBtn;
 
   @override
   Widget build(BuildContext context) {
@@ -50,24 +54,29 @@ class ProjectCardMobileAndTabletWidget extends StatelessWidget {
           runSpacing: 8,
           children: customStackChip,
         ),
-        const SizedBox(height: 16),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CustomAndroidGithubBtn(
-              text: "Android 앱",
-              url: androidUrl,
-              iconPath: AssetPath.androidImage2,
-            ),
-            const SizedBox(width: 10),
-            CustomAndroidGithubBtn(
-              text: "GitHub",
-              url: githubUrl,
-              iconPath: AssetPath.githubImage2,
-            ),
-          ],
-        ),
+        if (showGithubBtn || showAndroidBtn) ...[
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              if (showGithubBtn) ...[
+                CustomAndroidGithubBtn(
+                  text: "GitHub",
+                  url: githubUrl,
+                  iconPath: AssetPath.githubImage2,
+                ),
+                if (showAndroidBtn) const SizedBox(width: 10),
+              ],
+              if (showAndroidBtn)
+                CustomAndroidGithubBtn(
+                  text: "Android 앱",
+                  url: androidUrl,
+                  iconPath: AssetPath.androidImage2,
+                ),
+            ],
+          ),
+        ],
 
         const SizedBox(height: 20),
 
@@ -76,7 +85,7 @@ class ProjectCardMobileAndTabletWidget extends StatelessWidget {
           child: Image.asset(
             imagePath,
             width: double.infinity,
-            height: 350,
+            height: 600,
             fit: BoxFit.cover,
           ),
         ),
