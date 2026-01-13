@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/model/screen_model.dart';
 import 'package:juwon_portfolio/util/asset_path.dart';
 import 'package:juwon_portfolio/util/my_color.dart';
+import 'package:juwon_portfolio/util/menu_util.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/util/custom_text_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../menu/menu_height.dart';
 
@@ -89,7 +91,9 @@ class Header extends StatelessWidget {
                     textStyle: TextUtil.get16(context, Colors.white),
                     size: Size(140, 44),
                     backgroundColor: MyColor.primaryBlue,
-                    onPressed: () {},
+                    onPressed: () {
+                      MenuUtil.changeIndex(context, 2); // Featured Projects로 이동
+                    },
                   ),
                   SizedBox(width: 12),
                   CustomTextButton(
@@ -101,7 +105,12 @@ class Header extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.15),
                       width: 1,
                     ),
-                    onPressed: () {},
+                    onPressed: () async {
+                      final uri = Uri.parse('mailto:juwonjeon852@gmail.com');
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      }
+                    },
                   ),
                 ],
               ),
@@ -114,7 +123,9 @@ class Header extends StatelessWidget {
                     textStyle: TextUtil.get16(context, Colors.white),
                     size: Size(140, 44),
                     backgroundColor: MyColor.primaryBlue,
-                    onPressed: () {},
+                    onPressed: () {
+                      MenuUtil.changeIndex(context, 2); // Featured Projects로 이동
+                    },
                   ),
                   SizedBox(height: 12),
                   CustomTextButton(
@@ -126,7 +137,12 @@ class Header extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.15),
                       width: 1,
                     ),
-                    onPressed: () {},
+                    onPressed: () async {
+                      final uri = Uri.parse('mailto:juwonjeon852@gmail.com');
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri);
+                      }
+                    },
                   ),
                 ],
               ),

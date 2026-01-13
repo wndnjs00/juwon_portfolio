@@ -7,6 +7,7 @@ import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/menu/menu_height.dart';
 import 'package:juwon_portfolio/widgets/util/custom_menu_text_button.dart';
 import 'package:juwon_portfolio/widgets/menu/menu_tablet_and_mobile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Menu extends StatelessWidget {
   const Menu({
@@ -72,7 +73,12 @@ class Menu extends StatelessWidget {
           Row(
             children: [
               GestureDetector(
-                onTap: (){},
+                onTap: () async {
+                  final uri = Uri.parse('https://github.com/wndnjs00');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
                 child: ClipOval(
                   child: Image.asset(
                     AssetPath.githubImage,
@@ -84,7 +90,12 @@ class Menu extends StatelessWidget {
               ),
               const SizedBox(width: 5),
               GestureDetector(
-                onTap: (){},
+                onTap: () async {
+                  final uri = Uri.parse('https://coding-juuwon2.tistory.com/');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
                 child: ClipOval(
                   child: Image.asset(
                     AssetPath.blogImage,
@@ -96,7 +107,12 @@ class Menu extends StatelessWidget {
               ),
               const SizedBox(width: 5),
               GestureDetector(
-                onTap: (){},
+                onTap: () async {
+                  final uri = Uri.parse('mailto:juwonjeon852@gmail.com');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri);
+                  }
+                },
                 child: ClipOval(
                   child: Image.asset(
                     AssetPath.emailImage,

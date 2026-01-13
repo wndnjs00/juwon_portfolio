@@ -16,6 +16,8 @@ class PortfolioDetaiTemplate extends StatefulWidget {
     required this.icon1Url,
     required this.icon2Image,
     required this.icon2Url,
+    required this.techStacks,
+    this.showIcon1 = true,
     super.key,
   });
 
@@ -29,6 +31,8 @@ class PortfolioDetaiTemplate extends StatefulWidget {
   final String icon1Url;
   final String icon2Image;
   final String icon2Url;
+  final List<CustomStackChip> techStacks;
+  final bool showIcon1;
 
   @override
   State<PortfolioDetaiTemplate> createState() => _PortfolioDetaiTemplateState();
@@ -80,8 +84,10 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                       ),
                     ),
 
-                    _circleIcon(widget.icon1Image, widget.icon1Url),
-                    const SizedBox(width: 12),
+                    if (widget.showIcon1) ...[
+                      _circleIcon(widget.icon1Image, widget.icon1Url),
+                      const SizedBox(width: 12),
+                    ],
                     _circleIcon(widget.icon2Image, widget.icon2Url),
                   ],
                 ),
@@ -128,63 +134,7 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
-                  children: const [
-                    CustomStackChip(
-                      text: "Android",
-                      backgroundColor: MyColor.tagPink,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Kotlin",
-                      backgroundColor: MyColor.tagPink,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "MVVM Pattern",
-                      backgroundColor: MyColor.tagPurple,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Retrofit2",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Okhttp3",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Flow",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Coroutine",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Hilt",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "XML",
-                      backgroundColor: MyColor.tagYellow,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "RoomDB",
-                      backgroundColor: MyColor.tagOrange,
-                      textColor: Colors.black,
-                    ),
-                    CustomStackChip(
-                      text: "Firebase",
-                      backgroundColor: MyColor.tagOrange,
-                      textColor: Colors.black,
-                    ),
-                  ],
+                  children: widget.techStacks,
                 ),
                 const SizedBox(height: 50),
 
@@ -327,7 +277,7 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
         Text(
           value,
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 15,
             height: 1.6,
             color: Colors.grey.shade700,
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/util/menu_util.dart';
 import 'package:juwon_portfolio/util/text_util.dart';
 import 'package:juwon_portfolio/widgets/util/bottom_circle_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../util/asset_path.dart';
 import '../../util/my_color.dart';
 import '../util/custom_menu_text_button.dart';
@@ -45,17 +46,32 @@ class Footer extends StatelessWidget {
                     children: [
                       BottomCircleImage(
                         imagePath: AssetPath.githubImage,
-                        onTap: () {},
+                        onTap: () async {
+                          final uri = Uri.parse('https://github.com/wndnjs00');
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri, mode: LaunchMode.externalApplication);
+                          }
+                        },
                       ),
                       const SizedBox(width: 6),
                       BottomCircleImage(
                         imagePath: AssetPath.blogImage,
-                        onTap: () {},
+                        onTap: () async {
+                          final uri = Uri.parse('https://coding-juuwon2.tistory.com/');
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri, mode: LaunchMode.externalApplication);
+                          }
+                        },
                       ),
                       const SizedBox(width: 6),
                       BottomCircleImage(
                         imagePath: AssetPath.emailImage,
-                        onTap: () {},
+                        onTap: () async {
+                          final uri = Uri.parse('mailto:juwonjeon852@gmail.com');
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
+                        },
                       ),
                     ],
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detai_template.dart';
-
+import 'package:juwon_portfolio/util/my_color.dart';
+import 'package:juwon_portfolio/widgets/home/custom_stack_chip.dart';
 import '../../../util/asset_path.dart';
 
 class PortfolioDetailScreen4 extends StatefulWidget {
@@ -32,6 +33,59 @@ class _PortfolioDetailScreen4State extends State<PortfolioDetailScreen4> {
       icon1Url: "",
       icon2Image: AssetPath.githubImage2,
       icon2Url: "https://github.com/wndnjs00/MiniYouTube",
+      showIcon1: false,
+      techStacks: const [
+        CustomStackChip(
+          text: "Android",
+          backgroundColor: MyColor.tagPink,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "Kotlin",
+          backgroundColor: MyColor.tagPink,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "MVVM Pattern",
+          backgroundColor: MyColor.tagPurple,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "Retrofit2",
+          backgroundColor: MyColor.tagYellow,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "Okhttp3",
+          backgroundColor: MyColor.tagYellow,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "LiveData",
+          backgroundColor: MyColor.tagYellow,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "Coroutine",
+          backgroundColor: MyColor.tagYellow,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "Hilt",
+          backgroundColor: MyColor.tagYellow,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "XML",
+          backgroundColor: MyColor.tagYellow,
+          textColor: Colors.black,
+        ),
+        CustomStackChip(
+          text: "RoomDB",
+          backgroundColor: MyColor.tagOrange,
+          textColor: Colors.black,
+        ),
+      ],
     );
   }
 }

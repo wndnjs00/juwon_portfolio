@@ -18,4 +18,6 @@ class AssetPath {
   static const blogImage = "assets/blog.png";
   static const emailImage = "assets/email.png";
 
+  // PDF
+  static const portfolioPdf = "assets/portfolio.pdf";
 }
