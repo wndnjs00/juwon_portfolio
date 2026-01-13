@@ -74,23 +74,52 @@ class ProjectCardWidget extends StatelessWidget {
 
                     if (showGithubBtn || showAndroidBtn) ...[
                       const SizedBox(height: 16),
-                      Row(
-                        children: [
-                          if (showGithubBtn) ...[
-                            CustomAndroidGithubBtn(
-                              text: "GitHub",
-                              url: githubUrl,
-                              iconPath: AssetPath.githubImage2,
-                            ),
-                            if (showAndroidBtn) const SizedBox(width: 10),
-                          ],
-                          if (showAndroidBtn)
-                            CustomAndroidGithubBtn(
-                              text: "Android 앱",
-                              url: androidUrl,
-                              iconPath: AssetPath.androidImage2,
-                            ),
-                        ],
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          // 카드가 좁아지는 구간에서는 세로(Column)로 배치해서 오버플로우 방지
+                          final bool useColumn = constraints.maxWidth < 260;
+
+                          if (useColumn) {
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (showGithubBtn)
+                                  CustomAndroidGithubBtn(
+                                    text: "GitHub",
+                                    url: githubUrl,
+                                    iconPath: AssetPath.githubImage2,
+                                  ),
+                                if (showGithubBtn && showAndroidBtn)
+                                  const SizedBox(height: 8),
+                                if (showAndroidBtn)
+                                  CustomAndroidGithubBtn(
+                                    text: "Android 앱",
+                                    url: androidUrl,
+                                    iconPath: AssetPath.androidImage2,
+                                  ),
+                              ],
+                            );
+                          }
+
+                          return Row(
+                            children: [
+                              if (showGithubBtn) ...[
+                                CustomAndroidGithubBtn(
+                                  text: "GitHub",
+                                  url: githubUrl,
+                                  iconPath: AssetPath.githubImage2,
+                                ),
+                                if (showAndroidBtn) const SizedBox(width: 10),
+                              ],
+                              if (showAndroidBtn)
+                                CustomAndroidGithubBtn(
+                                  text: "Android 앱",
+                                  url: androidUrl,
+                                  iconPath: AssetPath.androidImage2,
+                                ),
+                            ],
+                          );
+                        },
                       ),
                     ],
                   ],
