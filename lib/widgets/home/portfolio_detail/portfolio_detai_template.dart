@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:juwon_portfolio/util/my_color.dart';
 import 'package:juwon_portfolio/widgets/home/custom_stack_chip.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -67,7 +66,7 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                Divider(color: Colors.grey.shade300, height: 2),
+                Divider(color: Colors.grey.shade300,),
                 const SizedBox(height: 24),
 
                 // 타이틀 + 아이콘
@@ -138,111 +137,8 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                 ),
                 const SizedBox(height: 50),
 
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 1100),
-                    child: SizedBox(
-                      height: 800,
-                      child: Stack(
-                        children: [
-                          Positioned.fill(
-                            child: PageView(
-                              controller: _pageController,
-                              onPageChanged: (index) {
-                                setState(() {
-                                  _currentIndex = index;
-                                });
-                              },
-                              children: widget.imagePaths.map((path) {
-                                return Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(16),
-                                    child: Image.asset(
-                                      path,
-                                      fit: BoxFit.cover,
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                    ),
-                                  ),
-                                );
-                              }).toList(),
-                            ),
-                          ),
-
-                          // 왼쪽 화살표 (0번째면 숨김)
-                          if (_currentIndex != 0)
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              bottom: 0,
-                              child: Center(
-                                child: Material(
-                                  color: Colors.transparent,
-                                  shape: const CircleBorder(),
-                                  child: InkWell(
-                                    customBorder: const CircleBorder(),
-                                    onTap: () {
-                                      _pageController.animateToPage(
-                                        _currentIndex - 1,
-                                        duration: const Duration(
-                                          microseconds: 200,
-                                        ),
-                                        curve: Curves.easeInOut,
-                                      );
-                                    },
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(5),
-                                      child: Icon(
-                                        Icons.keyboard_arrow_left_rounded,
-                                        size: 48,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-
-                          // 오른쪽 화살표 (마지막이면 숨김)
-                          if (_currentIndex != widget.imagePaths.length - 1)
-                            Positioned(
-                              right: 0,
-                              top: 0,
-                              bottom: 0,
-                              child: Center(
-                                child: Material(
-                                  color: Colors.transparent,
-                                  shape: const CircleBorder(),
-                                  child: InkWell(
-                                    customBorder: const CircleBorder(),
-                                    onTap: () {
-                                      _pageController.animateToPage(
-                                        _currentIndex + 1,
-                                        duration: const Duration(
-                                          microseconds: 200,
-                                        ),
-                                        curve: Curves.easeInOut,
-                                      );
-                                    },
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(5),
-                                      child: Icon(
-                                        Icons.keyboard_arrow_right_rounded,
-                                        size: 48,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                // 이미지 영역
+                _buildImageSection(),
               ],
             ),
           ),
@@ -301,4 +197,117 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
       ),
     );
   }
+
+  Widget _buildImageSection() {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // Web에서는 최대 1100, Mobile/Tablet에서는 화면 너비
+          final double width =
+          constraints.maxWidth > 1100 ? 1100 : constraints.maxWidth;
+
+          return SizedBox(
+            width: width,
+            child: AspectRatio(
+              aspectRatio: 11 / 8, // 웹이랑 동일 비율
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: PageView(
+                      controller: _pageController,
+                      onPageChanged: (index) {
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      },
+                      children: widget.imagePaths.map((path) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16),
+                            child: Image.asset(
+                              path,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+
+                  // 왼쪽 화살표 (0번째면 숨김)
+                  if (_currentIndex != 0)
+                    Positioned(
+                      left: 0,
+                      top: 0,
+                      bottom: 0,
+                      child: Center(
+                        child: Material(
+                          color: Colors.transparent,
+                          shape: const CircleBorder(),
+                          child: InkWell(
+                            customBorder: const CircleBorder(),
+                            onTap: () {
+                              _pageController.animateToPage(
+                                _currentIndex - 1,
+                                duration: const Duration(
+                                  microseconds: 200,
+                                ),
+                                curve: Curves.easeInOut,
+                              );
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.all(5),
+                              child: Icon(
+                                Icons.keyboard_arrow_left_rounded,
+                                size: 48,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  // 오른쪽 화살표 (마지막이면 숨김)
+                  if (_currentIndex != widget.imagePaths.length - 1)
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      bottom: 0,
+                      child: Center(
+                        child: Material(
+                          color: Colors.transparent,
+                          shape: const CircleBorder(),
+                          child: InkWell(
+                            customBorder: const CircleBorder(),
+                            onTap: () {
+                              _pageController.animateToPage(
+                                _currentIndex + 1,
+                                duration: const Duration(
+                                  microseconds: 200,
+                                ),
+                                curve: Curves.easeInOut,
+                              );
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.all(5),
+                              child: Icon(
+                                Icons.keyboard_arrow_right_rounded,
+                                size: 48,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
 }
