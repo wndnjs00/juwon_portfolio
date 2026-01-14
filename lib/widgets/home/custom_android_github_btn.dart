@@ -23,30 +23,33 @@ class CustomAndroidGithubBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: _launchUrl,
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.grey.shade300),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              iconPath,
-              width: 18,
-              height: 18,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(width: 6),
-            Text(
-              text,
-              style: TextUtil.get14(context, Colors.black).copyWith(fontWeight: FontWeight.w600),
-            ),
-          ],
+    return FittedBox(
+      fit: BoxFit.scaleDown, // 폭이 부족할 때 살짝 줄여 오버플로우 방지
+      child: InkWell(
+        onTap: _launchUrl,
+        borderRadius: BorderRadius.circular(8),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.grey.shade300),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset(
+                iconPath,
+                width: 18,
+                height: 18,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                text,
+                style: TextUtil.get14(context, Colors.black).copyWith(fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
         ),
       ),
     );

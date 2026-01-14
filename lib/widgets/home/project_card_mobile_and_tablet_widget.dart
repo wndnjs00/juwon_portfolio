@@ -80,13 +80,23 @@ class ProjectCardMobileAndTabletWidget extends StatelessWidget {
 
         const SizedBox(height: 20),
 
-        ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset(
-            imagePath,
-            width: double.infinity,
-            height: 600,
-            fit: BoxFit.cover,
+        // 주요 프로젝트 스크린샷은 항상 동일한 비율(대략 5:3)을 유지하면서,
+        // 최대 500px 너비 안에서만 표시되도록 고정
+        Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 500, // 웹/태블릿/모바일 모두 공통 최대 너비
+            ),
+            child: AspectRatio(
+              aspectRatio: 5 / 3, // 500x300 과 유사한 비율
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
           ),
         ),
       ],
