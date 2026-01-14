@@ -27,9 +27,8 @@ class _PortfolioDetailScreen3State extends State<PortfolioDetailScreen3> {
         '다국어 지원',
       ],
       imagePaths: [
-        AssetPath.officeImage,
-        AssetPath.officeImage,
-        AssetPath.officeImage,
+        AssetPath.detailproject7,
+        AssetPath.detailproject8,
       ],
       icon1Image: AssetPath.playstoreImage,
       icon1Url: "https://play.google.com",

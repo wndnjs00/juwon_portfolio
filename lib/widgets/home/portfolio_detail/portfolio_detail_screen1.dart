@@ -29,9 +29,9 @@ class _PortfolioDetailScreen1State extends State<PortfolioDetailScreen1> {
           '다크모드 기능',
         ],
         imagePaths: [
-          AssetPath.officeImage,
-          AssetPath.sampleImage,
-          AssetPath.officeImage,
+          AssetPath.detailproject1,
+          AssetPath.detailproject2,
+          AssetPath.detailproject3,
         ],
         icon1Image: AssetPath.playstoreImage,
         icon1Url: "https://play.google.com/store/apps/details?id=com.myapp.jikimi",

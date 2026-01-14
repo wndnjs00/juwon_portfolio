@@ -249,7 +249,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: _project1Key,
                 title: "지키미",
                 description: "재난발생시, 주변 대피소 정보를 한눈에 확인할 수 있는 안전지킴이 앱",
-                imagePath: AssetPath.officeImage,
+                imagePath: AssetPath.project1,
                 customStackChip: const [
                   CustomStackChip(
                     text: "Android",
@@ -299,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: _project2Key,
                 title: "맛고",
                 description: "지역별 특산물을 활용한 요리레시피 제공앱",
-                imagePath: AssetPath.officeImage,
+                imagePath: AssetPath.project2,
                 customStackChip: const [
                   CustomStackChip(
                     text: "Android",
@@ -349,7 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
               key: _project3Key,
               title: "readway",
               description: "손쉽게 기록하는 독서기록 앱",
-              imagePath: AssetPath.officeImage,
+              imagePath: AssetPath.project3,
               customStackChip: const [
                 CustomStackChip(
                   text: "Flutter",
@@ -390,7 +390,7 @@ class _HomeScreenState extends State<HomeScreen> {
               key: _project4Key,
               title: "MiniYoutube",
               description: "카테고리별로 모아보는 나만의 MiniYoutube 앱",
-              imagePath: AssetPath.officeImage,
+              imagePath: AssetPath.project4,
               customStackChip: const [
                 CustomStackChip(
                   text: "Android",
@@ -436,7 +436,7 @@ class _HomeScreenState extends State<HomeScreen> {
               key: _project5Key,
               title: "WaterLog [제작중]",
               description: "꾸준한 물섭취를 위한, 물섭취 기록앱",
-              imagePath: AssetPath.officeImage,
+              imagePath: AssetPath.project5,
               customStackChip: const [
                 CustomStackChip(
                   text: "Android",

@@ -25,9 +25,8 @@ class _PortfolioDetailScreen4State extends State<PortfolioDetailScreen4> {
         '영상 저장 & 공유 기능',
       ],
       imagePaths: [
-        AssetPath.officeImage,
-        AssetPath.officeImage,
-        AssetPath.officeImage,
+        AssetPath.detailproject9,
+        AssetPath.detailproject10,
       ],
       icon1Image: AssetPath.playstoreImage,
       icon1Url: "",

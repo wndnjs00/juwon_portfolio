@@ -27,9 +27,9 @@ class _PortfolioDetailScreen2State extends State<PortfolioDetailScreen2> {
         '로그인 & 회원가입',
       ],
       imagePaths: [
-        AssetPath.officeImage,
-        AssetPath.officeImage,
-        AssetPath.officeImage,
+        AssetPath.detailproject4,
+        AssetPath.detailproject5,
+        AssetPath.detailproject6,
       ],
       icon1Image: AssetPath.playstoreImage,
       icon1Url: "https://play.google.com/store/apps/details?id=nbc.group.recipes",
