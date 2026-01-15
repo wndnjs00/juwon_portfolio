@@ -81563,7 +81563,7 @@ $S:6}
 A.akC.prototype={
 $4(a,a0,a1,a2){var s,r,q,p=null,o="assets/kotlin.png",n="assets/java.png",m="assets/flutter.png",l="assets/dart.png",k="assets/android2.png",j="assets/springboot.png",i="Spring Boot",h="assets/firebase.png",g="Firebase",f="assets/mysql.png",e=this.b,d=A.bP(e,p,t.w).w,c=this.a,b=c.a42()
 d=A.axZ(a0,d.a.a)
-s=A.awk("Android Developer",a,!0,!0,"\uc0ac\uc6a9\uc790 \uc911\uc2ec\uc758 \uac00\uce58\uc788\ub294 \ucf54\ub4dc\ub97c \ub9cc\ub4dc\ub294 \uc571\uac1c\ubc1c\uc790 \uc785\ub2c8\ub2e4.\n\uc0c8\ub85c\uc6b4 \uae30\uc220\uc744 \ube60\ub974\uac8c \uc2b5\ub4dd\ud558\uace0, \uc774\ub97c \ud1b5\ud574 \ub354 \ub098\uc740 \uc0ac\uc6a9\uc790 \uacbd\ud5d8\uc744 \uc81c\uacf5\ud558\ub294\uac83\uc744 \ubaa9\ud45c\ub85c \ud569\ub2c8\ub2e4.","\uc804\uc8fc\uc6d0",15)
+s=A.awk("Android Developer",a,!0,!0,"\uc0ac\uc6a9\uc790 \uc911\uc2ec\uc758 \uac00\uce58\uc788\ub294 \ucf54\ub4dc\ub97c \ub9cc\ub4dc\ub294 \uac1c\ubc1c\uc790 \uc785\ub2c8\ub2e4.\n\uc0c8\ub85c\uc6b4 \uae30\uc220\uc744 \ube60\ub974\uac8c \uc2b5\ub4dd\ud558\uace0, \uc774\ub97c \ud1b5\ud574 \ub354 \ub098\uc740 \uc0ac\uc6a9\uc790 \uacbd\ud5d8\uc744 \uc81c\uacf5\ud558\ub294\uac83\uc744 \ubaa9\ud45c\ub85c \ud569\ub2c8\ub2e4.","\uc804\uc8fc\uc6d0",15)
 r=t.p
 q=A.b([A.e_(p,50,p),new A.xr("Technical Skills","\ud504\ub85c\uc81d\ud2b8\uc5d0\uc11c \ud65c\uc6a9\ud55c \uc8fc\uc694 \uae30\uc220\uc2a4\ud0dd\uc785\ub2c8\ub2e4.",!1,c.e),B.c2],r)
 if(a0)B.b.O(q,A.b([A.lr(B.cr,A.b([A.eD(p,B.i,!0,o,"Kotlin"),A.eD(p,B.i,!0,n,"Java"),A.eD(p,B.i,!0,m,"Flutter")],r),10,80),B.bf,A.lr(B.cr,A.b([A.eD(p,B.i,!0,l,"Dart"),A.eD(p,B.i,!0,k,"Android"),A.eD(p,B.i,!0,j,i)],r),10,80),B.bf,A.lr(B.cr,A.b([A.eD(p,B.i,!0,h,g),A.eD(p,B.i,!0,f,"MySQL"),A.eD(B.E,B.E,!1,p,"")],r),10,80)],r))
