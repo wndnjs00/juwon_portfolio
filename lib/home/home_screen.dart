@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           header: Header(
               title: "전주원",
-              subTitle: "사용자 중심의 가치있는 코드를 만드는 앱개발자 입니다.\n새로운 기술을 빠르게 습득하고, 이를 통해 더 나은 사용자 경험을 제공하는것을 목표로 합니다.",
+              subTitle: "사용자 중심의 가치있는 코드를 만드는 개발자 입니다.\n새로운 기술을 빠르게 습득하고, 이를 통해 더 나은 사용자 경험을 제공하는것을 목표로 합니다.",
               developerTitle: "Android Developer",
               screenModel: screenModel
           ),
