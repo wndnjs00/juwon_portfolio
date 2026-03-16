@@ -13,6 +13,7 @@ import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_s
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen2.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen3.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen4.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen5.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 
 void main() async {
@@ -97,6 +98,13 @@ class MyApp extends StatelessWidget {
                 key: ValueKey("portfolioDetail4"),
                 title:"PortfolioDetail4",
                 child: PortfolioDetailScreen4(),
+              );
+            },
+            RoutePage.portfolioDetail5: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail5"),
+                title:"PortfolioDetail5",
+                child: PortfolioDetailScreen5(),
               );
             },
           },

@@ -17,7 +17,7 @@ class _PortfolioDetailScreen1State extends State<PortfolioDetailScreen1> {
     return PortfolioDetaiTemplate(
         title: "지키미 [안전지킴이 앱]",
         overview: "재난발생시, 주변 대피소 정보를 한눈에 확인할 수 있는 안전지킴이 앱입니다.\n사용자들의 피드백을 받고 수정하며 보완해 나가기위해 노력하고 있습니다.",
-        period: "2024.08.16 ~ 진행중",
+        period: "2024.08.16 ~ 업데이트 진행중",
         people: "개인 프로젝트",
         contributions: [
           '현재 위치 반경 5km 이내의 대피소 정보확인',
@@ -28,6 +28,11 @@ class _PortfolioDetailScreen1State extends State<PortfolioDetailScreen1> {
           '로그인 & 회원가입',
           '다크모드 기능',
         ],
+      targetUsers: [
+        '위급 상황에서 가까운 안전한 대피 장소를 찾고 싶은 분',
+        '재난 대비 정보를 미리 확인하고 안전을 준비하고 싶은 분',
+        '주변 사람들과 재난 상황에 대한 정보를 공유하고 싶은 분',
+      ],
         imagePaths: [
           AssetPath.detailproject1,
           AssetPath.detailproject2,

@@ -34,6 +34,9 @@ class AssetPath {
   static const detailproject8 = "assets/detail_project8.png";
   static const detailproject9 = "assets/detail_project9.png";
   static const detailproject10 = "assets/detail_project10.png";
+  static const detailproject11 = "assets/detail_project11.png";
+  static const detailproject12 = "assets/detail_project12.png";
+  static const detailproject13 = "assets/detail_project13.png";
 
   // PDF
   static const portfolioPdf = "assets/portfolio.pdf";

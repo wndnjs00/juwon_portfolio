@@ -13,6 +13,7 @@ class ProjectCardWidget extends StatelessWidget {
     required this.customStackChip,
     required this.androidUrl,
     required this.githubUrl,
+    this.flutterGithubUrl,
     required this.isWeb,
     required this.onTap,
     this.showGithubBtn = true,
@@ -26,6 +27,7 @@ class ProjectCardWidget extends StatelessWidget {
   final List<CustomStackChip> customStackChip;
   final String androidUrl;
   final String githubUrl;
+  final String? flutterGithubUrl;
   final bool isWeb;
   final VoidCallback onTap;
   final bool showGithubBtn;
@@ -47,59 +49,72 @@ class ProjectCardWidget extends StatelessWidget {
             border: Border.all(color: Colors.grey.shade200),
           ),
           child: isWeb
-            ? Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              ? Row(
                   children: [
-                    Text(
-                      title,
-                      style: TextUtil.get20(
-                        context,
-                        Colors.black,
-                      ).copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      description,
-                      style: TextUtil.get14(
-                        context,
-                        Colors.black,
-                      ).copyWith(fontWeight: FontWeight.w500),
-                    ),
-                    const SizedBox(height: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: TextUtil.get20(
+                              context,
+                              Colors.black,
+                            ).copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            description,
+                            style: TextUtil.get14(
+                              context,
+                              Colors.black,
+                            ).copyWith(fontWeight: FontWeight.w500),
+                          ),
+                          const SizedBox(height: 14),
 
-                    Wrap(spacing: 8, runSpacing: 8, children: customStackChip),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: customStackChip,
+                          ),
 
-                    if (showGithubBtn || showAndroidBtn) ...[
-                      const SizedBox(height: 16),
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          // 카드가 좁아지는 구간에서는 세로(Column)로 배치해서 오버플로우 방지
-                          final bool useColumn = constraints.maxWidth < 260;
+                          if (showGithubBtn || showAndroidBtn) ...[
+                            const SizedBox(height: 16),
+                            LayoutBuilder(
+                              builder: (context, constraints) {
+                                // 카드가 좁아지는 구간에서는 세로(Column)로 배치해서 오버플로우 방지
+                                final bool useColumn =
+                                    constraints.maxWidth < 260;
 
-                          if (useColumn) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                if (showGithubBtn)
-                                  CustomAndroidGithubBtn(
-                                    text: "GitHub",
-                                    url: githubUrl,
-                                    iconPath: AssetPath.githubImage2,
-                                  ),
-                                if (showGithubBtn && showAndroidBtn)
-                                  const SizedBox(height: 8),
-                                if (showAndroidBtn)
-                                  CustomAndroidGithubBtn(
-                                    text: "Android 앱",
-                                    url: androidUrl,
-                                    iconPath: AssetPath.androidImage2,
-                                  ),
-                              ],
-                            );
-                          }
+                                if (useColumn) {
+                                  return Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      if (showGithubBtn)
+                                        CustomAndroidGithubBtn(
+                                          text: "GitHub",
+                                          url: githubUrl,
+                                          iconPath: AssetPath.githubImage2,
+                                        ),
+                                      if (flutterGithubUrl != null)...[
+                                        const SizedBox(height: 8),
+                                        CustomAndroidGithubBtn(
+                                            text: "GitHub(flutter)",
+                                            url: flutterGithubUrl!,
+                                            iconPath: AssetPath.githubImage2,
+                                        ),
+                                      ],
+                                      if (showGithubBtn && showAndroidBtn)
+                                        const SizedBox(height: 8),
+                                      if (showAndroidBtn)
+                                        CustomAndroidGithubBtn(
+                                          text: "Android 앱",
+                                          url: androidUrl,
+                                          iconPath: AssetPath.androidImage2,
+                                        ),
+                                    ],
+                                  );
+                                }
 
                           return Row(
                             children: [
@@ -109,6 +124,15 @@ class ProjectCardWidget extends StatelessWidget {
                                   url: githubUrl,
                                   iconPath: AssetPath.githubImage2,
                                 ),
+
+                                if (flutterGithubUrl != null) ...[
+                                  const SizedBox(width: 10),
+                                  CustomAndroidGithubBtn(
+                                      text: "GitHub(flutter)",
+                                      url: flutterGithubUrl!,
+                                      iconPath: AssetPath.githubImage2
+                                  ),
+                                ],
                                 if (showAndroidBtn) const SizedBox(width: 10),
                               ],
                               if (showAndroidBtn)
@@ -138,15 +162,15 @@ class ProjectCardWidget extends StatelessWidget {
             ],
           )
               : ProjectCardMobileAndTabletWidget(
-              title: title,
-              description: description,
-              customStackChip: customStackChip,
-              androidUrl: androidUrl,
-              githubUrl: githubUrl,
-              imagePath: imagePath,
-              showGithubBtn: showGithubBtn,
-              showAndroidBtn: showAndroidBtn,
-          )
+                  title: title,
+                  description: description,
+                  customStackChip: customStackChip,
+                  androidUrl: androidUrl,
+                  githubUrl: githubUrl,
+                  imagePath: imagePath,
+                  showGithubBtn: showGithubBtn,
+                  showAndroidBtn: showAndroidBtn,
+                ),
         ),
       ),
     );

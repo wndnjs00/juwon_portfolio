@@ -17,6 +17,8 @@ class PortfolioDetaiTemplate extends StatefulWidget {
     required this.icon2Url,
     required this.techStacks,
     this.showIcon1 = true,
+    this.targetUsers,
+    this.upcomingFeatures,
     super.key,
   });
 
@@ -26,6 +28,8 @@ class PortfolioDetaiTemplate extends StatefulWidget {
   final String people;
   final List<String> contributions;
   final List<String> imagePaths;
+  final List<String>? targetUsers;
+  final List<String>? upcomingFeatures;
   final String icon1Image;
   final String icon1Url;
   final String icon2Image;
@@ -124,6 +128,52 @@ class _PortfolioDetaiTemplateState extends State<PortfolioDetaiTemplate> {
                       )
                       .toList(),
                 ),
+
+                if (widget.targetUsers != null) ...[
+                  const SizedBox(height: 40),
+                  _sectionTitle("이런분들을 위해 만들었어요"),
+                  const SizedBox(height: 12),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: widget.targetUsers!
+                        .map(
+                        (e) => Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('•  '),
+                              Expanded(child: Text(e)),
+                            ],
+                          ),
+                        ),
+                    ).toList(),
+                  )
+                ],
+
+                if (widget.upcomingFeatures != null) ...[
+                  const SizedBox(height: 40),
+                  _sectionTitle("도입예정 기능"),
+                  const SizedBox(height: 12),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: widget.upcomingFeatures!
+                        .map(
+                          (e) => Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('•  '),
+                            Expanded(child: Text(e)),
+                          ],
+                        ),
+                      ),
+                    ).toList(),
+                  )
+                ],
 
                 const SizedBox(height: 40),
 

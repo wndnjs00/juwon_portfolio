@@ -14,7 +14,7 @@ import '../util/my_color.dart';
 import '../widgets/home/custom_skill_card_widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  
+
   const HomeScreen({
     this.scrollTo,
     super.key,
@@ -246,6 +246,78 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 40),
             // 프로젝트
             ProjectCardWidget(
+              key: _project5Key,
+              title: "WaterLog [Kotlin Compose & Flutter]",
+              description: "꾸준한 물섭취를 위한, 물섭취 기록앱",
+              imagePath: AssetPath.project5,
+              customStackChip: const [
+                CustomStackChip(
+                  text: "Kotlin",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Jetpack Compose",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Multi-Module",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Flow",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Dart",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Riverpod",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "MVVM Pattern",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Clean Architecture",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Firebase Auth/Firestore",
+                  backgroundColor: MyColor.tagOrange,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Firebase Functions",
+                  backgroundColor: MyColor.tagOrange,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Firebase Messaging(FCM)",
+                  backgroundColor: MyColor.tagOrange,
+                  textColor: Colors.black,
+                ),
+              ],
+              androidUrl: "",
+              githubUrl: "https://github.com/wndnjs00/waterLog",
+              flutterGithubUrl: "https://github.com/wndnjs00/waterlogs",
+              isWeb: web,
+              showAndroidBtn: false,
+              onTap: () {
+                RoutePage.movePage(context, RoutePage.portfolioDetail5);
+                }
+            ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
                 key: _project1Key,
                 title: "지키미",
                 description: "재난발생시, 주변 대피소 정보를 한눈에 확인할 수 있는 안전지킴이 앱",
@@ -430,56 +502,6 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 RoutePage.movePage(context, RoutePage.portfolioDetail4);
               },
-            ),
-            const SizedBox(height: 20),
-            ProjectCardWidget(
-              key: _project5Key,
-              title: "WaterLog [제작중]",
-              description: "꾸준한 물섭취를 위한, 물섭취 기록앱",
-              imagePath: AssetPath.project5,
-              customStackChip: const [
-                CustomStackChip(
-                  text: "Android",
-                  backgroundColor: MyColor.tagPink,
-                  textColor: Colors.black,
-                ),
-                CustomStackChip(
-                  text: "Kotlin",
-                  backgroundColor: MyColor.tagPink,
-                  textColor: Colors.black,
-                ),
-                CustomStackChip(
-                  text: "Compose",
-                  backgroundColor: MyColor.tagPurple,
-                  textColor: Colors.black,
-                ),
-                CustomStackChip(
-                  text: "MVVM Pattern",
-                  backgroundColor: MyColor.tagPurple,
-                  textColor: Colors.black,
-                ),
-                CustomStackChip(
-                  text: "Retrofit2",
-                  backgroundColor: MyColor.tagYellow,
-                  textColor: Colors.black,
-                ),
-                CustomStackChip(
-                  text: "Okhttp3",
-                  backgroundColor: MyColor.tagYellow,
-                  textColor: Colors.black,
-                ),
-                CustomStackChip(
-                  text: "Firebase",
-                  backgroundColor: MyColor.tagOrange,
-                  textColor: Colors.black,
-                ),
-              ],
-              androidUrl: "",
-              githubUrl: "",
-              isWeb: web,
-              showAndroidBtn: false,
-              showGithubBtn: false,
-              onTap: () {},
             ),
             const SizedBox(height: 60),
           ],
