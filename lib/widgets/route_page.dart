@@ -12,6 +12,8 @@ class RoutePage{
   static const portfolioDetail3 = "/portfolio_detail3";
   static const portfolioDetail4 = "/portfolio_detail4";
   static const portfolioDetail5 = "/portfolio_detail5";
+  static const portfolioDetail6 = "/portfolio_detail6";
+  static const portfolioDetail7 = "/portfolio_detail7";
 
   static movePage(BuildContext context, String routeName){
     context.beamToNamed(routeName);

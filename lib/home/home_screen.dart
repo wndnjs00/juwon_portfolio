@@ -35,6 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey _project3Key = GlobalKey();
   final GlobalKey _project4Key = GlobalKey();
   final GlobalKey _project5Key = GlobalKey();
+  final GlobalKey _project6Key = GlobalKey(); // Brain Match
+  final GlobalKey _project7Key = GlobalKey(); // TrashFlight
   String? _lastScrollTo;
 
   @override
@@ -162,11 +164,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       skillTitle: "MySQL"
                   ),
                   CustomSkillCardWidget(
-                    imagePath: null,
-                    skillTitle: "",
-                    color: Colors.transparent,
-                    borderColor: Colors.transparent,
-                    enableHover: false,
+                    imagePath: AssetPath.unityImage,
+                    skillTitle: "Unity",
                   ),
                 ],
               ),
@@ -231,6 +230,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   CustomSkillCardWidget(
                       imagePath: AssetPath.mysqlImage,
                       skillTitle: "MySQL"
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 60,
+                runSpacing: 20,
+                children: [
+                  CustomSkillCardWidget(
+                      imagePath: AssetPath.unityImage,
+                      skillTitle: "Unity"
                   ),
                 ],
               ),
@@ -503,6 +514,68 @@ class _HomeScreenState extends State<HomeScreen> {
                 RoutePage.movePage(context, RoutePage.portfolioDetail4);
               },
             ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
+              key: _project6Key,
+              title: "Brain Match",
+              description: "아이들의 기억력을 키우는 카드 매칭 게임앱",
+              imagePath: AssetPath.project6,
+              customStackChip: const [
+                CustomStackChip(
+                  text: "Unity - 2022.3.2f1",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Visual Studio Code",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "C#",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+              ],
+              androidUrl: "",
+              githubUrl: "https://github.com/wndnjs00/Brain-Match",
+              isWeb: web,
+              showAndroidBtn: false,
+              onTap: () {
+                RoutePage.movePage(context, RoutePage.portfolioDetail6);
+              },
+            ),
+            const SizedBox(height: 20),
+            ProjectCardWidget(
+              key: _project7Key,
+              title: "TrashFlight",
+              description: "쓰레기 제거 슈팅게임앱",
+              imagePath: AssetPath.project7,
+              customStackChip: const [
+                CustomStackChip(
+                  text: "Unity - 2022.3.2f1",
+                  backgroundColor: MyColor.tagPink,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "Visual Studio Code",
+                  backgroundColor: MyColor.tagYellow,
+                  textColor: Colors.black,
+                ),
+                CustomStackChip(
+                  text: "C#",
+                  backgroundColor: MyColor.tagPurple,
+                  textColor: Colors.black,
+                ),
+              ],
+              androidUrl: "",
+              githubUrl: "https://github.com/wndnjs00/TrashFlight",
+              isWeb: web,
+              showAndroidBtn: false,
+              onTap: () {
+                RoutePage.movePage(context, RoutePage.portfolioDetail7);
+              },
+            ),
             const SizedBox(height: 60),
           ],
         ),
@@ -553,6 +626,10 @@ class _HomeScreenState extends State<HomeScreen> {
       _scrollToSection(_project4Key);
     } else if (scrollTo == 'project5') {
       _scrollToSection(_project5Key);
+    } else if (scrollTo == 'project6') {
+      _scrollToSection(_project6Key);
+    } else if (scrollTo == 'project7') {
+      _scrollToSection(_project7Key);
     }
   }
 

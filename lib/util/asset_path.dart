@@ -11,18 +11,22 @@ class AssetPath {
   static const springBootImage = "assets/springboot.png";
   static const firebaseImage = "assets/firebase.png";
   static const mysqlImage = "assets/mysql.png";
+  static const unityImage = "assets/unityImage.png";
   static const profileImage = "assets/profile.png";
   static const playstoreImage = "assets/playstore.png";
   static const githubImage2 = "assets/github2.png";
   static const githubImage = "assets/github.png";
   static const blogImage = "assets/blog.png";
   static const emailImage = "assets/email.png";
+  static const youtubeImage = "assets/youtubeImage.png";
 
   static const project1 = "assets/project1.png";
   static const project2 = "assets/project2.png";
   static const project3 = "assets/project3.png";
   static const project4 = "assets/project4.png";
   static const project5 = "assets/project5.png";
+  static const project6 = "assets/project6.png";
+  static const project7 = "assets/project7.png";
 
   static const detailproject1 = "assets/detail_project1.png";
   static const detailproject2 = "assets/detail_project2.png";
@@ -37,6 +41,12 @@ class AssetPath {
   static const detailproject11 = "assets/detail_project11.png";
   static const detailproject12 = "assets/detail_project12.png";
   static const detailproject13 = "assets/detail_project13.png";
+
+  static const detailproject14 = "assets/detail_project14.png";
+  static const detailproject15 = "assets/detail_project15.png";
+
+  static const detailproject16 = "assets/detail_project16.png";
+  static const detailproject17 = "assets/detail_project17.png";
 
   // PDF
   static const portfolioPdf = "assets/portfolio.pdf";

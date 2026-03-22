@@ -14,6 +14,8 @@ import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_s
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen3.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen4.dart';
 import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen5.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen6.dart';
+import 'package:juwon_portfolio/widgets/home/portfolio_detail/portfolio_detail_screen7.dart';
 import 'package:juwon_portfolio/widgets/route_page.dart';
 
 void main() async {
@@ -105,6 +107,20 @@ class MyApp extends StatelessWidget {
                 key: ValueKey("portfolioDetail5"),
                 title:"PortfolioDetail5",
                 child: PortfolioDetailScreen5(),
+              );
+            },
+            RoutePage.portfolioDetail6: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail6"),
+                title:"PortfolioDetail6",
+                child: PortfolioDetailScreen6(),
+              );
+            },
+            RoutePage.portfolioDetail7: (context, state, data){
+              return const BeamPage(
+                key: ValueKey("portfolioDetail7"),
+                title:"PortfolioDetail7",
+                child: PortfolioDetailScreen7(),
               );
             },
           },
